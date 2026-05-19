@@ -1,0 +1,6 @@
+User-Agent: *
+NoIndex: /*location=*
+NoIndex: /*?=177415*
+Disallow: /*location=*
+Disallow: /*?=177415*
+Sitemap: https://www.nissan.in/sitemap.xml
