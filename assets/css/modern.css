@@ -1,0 +1,371 @@
+/* Modern UI enhancements – keep existing colors and fonts */
+/* Reset and box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transition for interactive elements */
+a, button, input, select, textarea {
+  transition: all 0.25s ease-in-out;
+}
+
+/* Hover/active states for links and buttons */
+a:hover, a:focus {
+  opacity: 0.85;
+}
+
+button, .button {
+  cursor: pointer;
+  background-color: inherit; /* preserve existing bg */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+button:hover, .button:hover {
+  opacity: 0.9;
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Responsive media queries – keep layout but add spacing */
+@media (max-width: 768px) {
+  .headerInr, .footerNissan_main, .main-inr {
+    padding: 0.5rem;
+  }
+  .menu {
+    flex-direction: column;
+  }
+
+/* Form enhancements */
+/* Updated sidebar search layout */
+.sidebar-mobile .search {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+/* Additional button enhancements */
+.btn-nav-booking {
+  transition: background-color 0.3s, opacity 0.3s, transform 0.2s;
+}
+.btn-nav-booking:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+.sidebar-mobile .search input {
+  flex: 1;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+  .sidebar-mobile .search button {
+    padding: 0.4rem 0.8rem;
+    transition: background-color 0.3s, opacity 0.3s, transform 0.2s;
+  }
+  .sidebar-mobile .search button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  @media (max-width: 768px) {
+    .sidebar-mobile .search {
+      flex-direction: column;
+    }
+  }
+
+/* Form field focus/hover */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: rgba(255,255,255,0.3);
+}
+/* Form field focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+}
+
+/* Ensure sidebar search input and button fill width */
+.sidebar-mobile .search input,
+.sidebar-mobile .search button {
+  width: 100%;
+}
+}
+
+/* Footer Alignment, Margins & Padding Enhancements */
+footer.grid-row.bleed {
+  padding: 4rem 2rem 2rem !important;
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3rem !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* If footer columns are empty, collapse the container and adjust padding */
+#footer-element {
+  padding: 1.2rem 2rem !important;
+  gap: 0 !important;
+}
+#footer-element .c_054-3 {
+  display: none !important;
+}
+
+footer .c_054-3 {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+footer .c_054-3 .grid-row .col-12 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  gap: 2rem !important;
+  float: none !important; /* override old grid floats */
+  width: 100% !important;
+}
+
+footer .footer-container {
+  flex: 1 1 200px !important;
+  margin: 0 !important;
+  padding: 0 1rem !important;
+  float: none !important;
+  width: auto !important;
+}
+
+footer .footer-heading {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 2px solid #333 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+footer .footer-heading .accordionToggle {
+  display: none !important; /* Hide toggle on desktop */
+}
+
+footer .footer-container ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+}
+
+footer .footer-container ul li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+footer .footer-container ul li a {
+  color: #aaaaaa !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  transition: color 0.2s ease, padding-left 0.2s ease !important;
+  display: inline-block !important;
+}
+
+footer .footer-container ul li a:hover {
+  color: #ffffff !important;
+  padding-left: 4px !important;
+}
+
+/* Social links container */
+footer .footer-container.last ul {
+  flex-direction: row !important;
+  gap: 1rem !important;
+  flex-wrap: wrap !important;
+}
+
+footer .footer-container.last ul li a.social-icon {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: #222 !important;
+  color: #fff !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+footer .footer-container.last ul li a.social-icon:hover {
+  background-color: #c30a18 !important; /* Nissan red */
+  color: #fff !important;
+  transform: translateY(-3px) !important;
+  padding-left: 0 !important;
+}
+
+footer .footer-container.last ul li a.social-icon span {
+  display: none !important;
+}
+
+/* Bottom Footer (c_025) */
+footer .c_025 {
+  width: 100% !important;
+  border-top: 1px solid #222 !important;
+  padding-top: 2rem !important;
+  margin-top: 1rem !important;
+}
+
+#footer-element .c_025 {
+  border-top: none !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+footer .c_025 .grid-row .col-12 {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+footer .footer-options {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  gap: 2rem !important;
+}
+
+footer .footer-options li {
+  margin: 0 !important;
+}
+
+footer .footer-options li a {
+  color: #aaaaaa !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  transition: color 0.2s ease !important;
+}
+
+footer .footer-options li a:hover {
+  color: #ffffff !important;
+}
+
+footer .footer-legal {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+footer .footer-legal ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  gap: 2rem !important;
+}
+
+footer .footer-legal ul li {
+  margin: 0 !important;
+}
+
+footer .footer-legal ul li a {
+  color: #aaaaaa !important;
+  text-decoration: none !important;
+  font-size: 0.85rem !important;
+  transition: color 0.2s ease !important;
+}
+
+footer .footer-legal ul li a:hover {
+  color: #ffffff !important;
+}
+
+footer .footer-copyright {
+  color: #666666 !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+}
+
+/* Mobile Responsive Footer Adjustments */
+@media (max-width: 768px) {
+  footer.grid-row.bleed {
+    padding: 2.5rem 1rem 1.5rem !important;
+    gap: 2rem !important;
+  }
+  
+  #footer-element {
+    padding: 1rem !important;
+  }
+  
+  footer .c_054-3 .grid-row .col-12 {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  
+  footer .footer-container {
+    padding: 0 !important;
+  }
+  
+  footer .footer-heading {
+    margin-bottom: 1rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  
+  footer .c_025 .grid-row .col-12 {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+  }
+  
+  footer .footer-options,
+  footer .footer-legal,
+  footer .footer-legal ul {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    align-items: flex-start !important;
+  }
+}
+
