@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <!--
   PERFORMANCE FIXES APPLIED:
-  1. CSS: Non-critical stylesheets loaded async via <link rel="preload"> + JS swap
+  1. CSS: Non-critical stylesheets loaded async via <link rel="preload"/> + JS swap
   2. CSS: Breakpoint-specific sheets loaded conditionally, not all-at-once
   3. JS:  main.min.js and main-forms.min.js deferred (defer attribute)
   4. JS:  Adobe DTM loaded after window load event (no longer render-blocking)
@@ -14,32 +15,28 @@
 -->
 <html class="no-js" dir="ltr" lang="en-IN" prefix="og: http://ogp.me/ns#">
 <head>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="26.05.30.NISSAN" name="version"/>
-  <meta content="IN" name="geo.country"/>
-  <meta content="For Nissan Care, contact us on Toll-Free Number: 1-800-209-3456 (for Call Centre, Road Side Assistance, and Extended Warranties) - Mon-Sun (9am - 7pm)" name="description"/>
-
-  <!-- Open Graph / Twitter -->
-  <meta content="Contact Us | Nissan India" property="og:title"/>
-  <meta content="For Nissan Care, contact us on Toll-Free Number: 1-800-209-3456" property="og:description"/>
-  <meta content="https://libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/logo/logo.png" property="og:image"/>
-  <meta content="/contact-us.html" property="og:url"/>
-  <meta content="Nissan" property="og:site_name"/>
-  <meta content="website" property="og:type"/>
-  <meta content="index,follow" name="robots"/>
-  <link href="/contact-us.html" rel="canonical"/>
-
-  <title>Request a Callback | Contact Nissan India | Nissan India</title>
-
-  <!-- FIX 1: Favicon — only what browsers actually use (drop 8 redundant sizes) -->
-  <link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/favicon/favicon_32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/favicon/favicon_152x152.png" rel="apple-touch-icon"/>
-
-  <!-- FIX 2: Critical CSS inlined — prevents any render-blocking for above-the-fold content -->
-  <style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="26.05.30.NISSAN" name="version"/>
+<meta content="IN" name="geo.country"/>
+<meta content="For Nissan Care, contact us on Toll-Free Number: 1-800-209-3456 (for Call Centre, Road Side Assistance, and Extended Warranties) - Mon-Sun (9am - 7pm)" name="description"/>
+<!-- Open Graph / Twitter -->
+<meta content="Contact Us | Nissan India" property="og:title"/>
+<meta content="For Nissan Care, contact us on Toll-Free Number: 1-800-209-3456" property="og:description"/>
+<meta content="/assets/img/reliable-nissan-logo.png" property="og:image"/>
+<meta content="/contact-us.html" property="og:url"/>
+<meta content="Nissan" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="index,follow" name="robots"/>
+<link href="/contact-us.html" rel="canonical"/>
+<title>Request a Callback | Contact Nissan India | Nissan India</title>
+<!-- FIX 1: Favicon â€” only what browsers actually use (drop 8 redundant sizes) -->
+<link href="/assets/img/reliable-nissan-logo.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/img/reliable-nissan-logo.png" rel="apple-touch-icon"/>
+<!-- FIX 2: Critical CSS inlined â€” prevents any render-blocking for above-the-fold content -->
+<style>
     /* === RESET & BASE === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; }
@@ -67,16 +64,16 @@
       max-width: 1280px; margin: 0 auto;
       padding: 0 24px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 64px;
+      height: 100px;
     }
     .logo-container { display: flex; align-items: center; text-decoration: none; }
-    .logo-container picture img { height: 32px; width: auto; display: block; }
+    .logo-container picture img { height: 90px; width: auto; display: block; }
     .page-title { color: #fff; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
-    .burger-container { display: none; } /* simplified — full nav JS loads deferred */
+    .burger-container { display: none; } /* simplified â€” full nav JS loads deferred */
 
     /* === MAIN CARD LAYOUT === */
     .nf-wrapper {
-      max-width: 1100px; margin: 48px auto; padding: 0 24px 48px;
+      max-width: 1100px; margin: 100px auto 48px; padding: 0 24px 48px;
     }
     .nf-card {
       display: flex; border-radius: 4px;
@@ -141,7 +138,7 @@
     .nf-input.error { border-color: #e00; }
     .nf-select-wrap { position: relative; }
     .nf-select-wrap::after {
-      content: '▾'; position: absolute; right: 14px; top: 50%;
+      content: 'â–¾'; position: absolute; right: 14px; top: 50%;
       transform: translateY(-50%); pointer-events: none; color: #888;
     }
     .nf-select { width: 100%; cursor: pointer; padding-right: 36px; }
@@ -169,14 +166,22 @@
     /* === TOAST === */
     .nf-toast {
       display: none; background: #1a7a3c; color: #fff;
-      padding: 14px 18px; border-radius: 4px;
-      font-size: .9rem; font-weight: 500;
-      animation: slideIn .3s ease;
+      padding: 16px 24px; border-radius: 8px;
+      font-size: .95rem; font-weight: 500;
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10000;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
-    .nf-toast.visible { display: flex; align-items: center; gap: 8px; }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .nf-toast.visible {
+      display: flex; align-items: center; gap: 8px;
+      animation: slideInToast .4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes slideInToast {
+      from { opacity: 0; transform: translate(-50%, 30px); }
+      to   { opacity: 1; transform: translate(-50%, 0); }
     }
 
     /* === BREADCRUMB === */
@@ -256,46 +261,27 @@
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
     .hidden { display: none !important; }
   </style>
-
-  <!-- FIX 3: Fonts loaded async — non-render-blocking -->
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/fonts/fonts-latin-basic.min.css"
-    onload="this.onload=null;this.rel='stylesheet'"/>
-  <noscript>
-    <link rel="stylesheet"
-      href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/fonts/fonts-latin-basic.min.css"/>
-  </noscript>
-
-  <!-- FIX 4: External CSS bundles loaded async — none block rendering -->
-  <!-- small.min.css is the only one needed immediately; loaded async then applied -->
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/small.min.css"
-    onload="this.onload=null;this.rel='stylesheet'"/>
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/medium.min.css"
-    onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 36.3125em)"/>
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/large.min.css"
-    onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 60em)"/>
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/css/small-forms.min.css"
-    onload="this.onload=null;this.rel='stylesheet'"/>
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/css/medium-forms.min.css"
-    onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 36.3125em)"/>
-  <link rel="preload" as="style"
-    href="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/css/large-forms.min.css"
-    onload="this.onload=null;this.rel='stylesheet'" media="(min-width: 60em)"/>
-
-  <noscript>
-    <link rel="stylesheet" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/small.min.css"/>
-    <link rel="stylesheet" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/medium.min.css" media="(min-width: 36.3125em)"/>
-    <link rel="stylesheet" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/large.min.css" media="(min-width: 60em)"/>
-  </noscript>
-
-  <!-- FIX 5: HELIOS config — stripped Google Maps, pricing, finance, smartLocation
+<!-- FIX 3: Fonts loaded async â€” non-render-blocking -->
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/fonts/fonts-latin-basic.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript>
+<link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/fonts/fonts-latin-basic.min.css" rel="stylesheet"/>
+</noscript>
+<!-- FIX 4: External CSS bundles loaded async â€” none block rendering -->
+<!-- small.min.css is the only one needed immediately; loaded async then applied -->
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/small.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/medium.min.css" media="(min-width: 36.3125em)" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/large.min.css" media="(min-width: 60em)" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/css/small-forms.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/css/medium-forms.min.css" media="(min-width: 36.3125em)" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/css/large-forms.min.css" media="(min-width: 60em)" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript>
+<link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/small.min.css" rel="stylesheet"/>
+<link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/medium.min.css" media="(min-width: 36.3125em)" rel="stylesheet"/>
+<link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/large.min.css" media="(min-width: 60em)" rel="stylesheet"/>
+</noscript>
+<!-- FIX 5: HELIOS config â€” stripped Google Maps, pricing, finance, smartLocation
        blocks that are not used on this page. Only what contact-us actually needs. -->
-  <script>
+<script>
     document.documentElement.classList.remove('no-js');
     document.documentElement.classList.add('js');
 
@@ -371,9 +357,8 @@
 
     var googleDataLayer = [HELIOS.adobe.tagging, {"event": "DLready"}];
   </script>
-
-  <!-- FIX 6: GTM — inline script only. noscript iframe at end of body. Already async. -->
-  <script>
+<!-- FIX 6: GTM â€” inline script only. noscript iframe at end of body. Already async. -->
+<script>
     (function(w,d,s,l,i){
       w[l]=w[l]||[];
       w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
@@ -383,320 +368,258 @@
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','googleDataLayer','GTM-MBTP8B');
   </script>
+<script src="/src/components/Layout.js" type="module"></script>
+<!-- IMPORTANT: config.js must load as a regular script (not module) so window.APP_CONFIG
+         is set synchronously before form-validation.js reads it. -->
+<script src="/src/config.js"></script>
+<script src="/assets/js/form-validation.js"></script>
+<style>
+  /* Reliable Nissan Logo Fixes */
+  .logo-container .logo img, 
+  .logo-container .logo source,
+  header .logo svg img,
+  footer .logo svg img {
+    object-fit: contain !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 45px !important;
+  }
+</style>
+<style id="custom-header-styles">
+  /* Clean Simple Header */
+  .simple-header {
+      background: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 10000;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+      height: 100px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+  }
+  .simple-header .wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .simple-header .logo-container {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+  }
+  .simple-header .logo-container img {
+      height: 32px;
+      width: auto;
+      display: block;
+  }
+  /* Modern Premium "Back to Home" Button in Header */
+  .header-back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #c3002f;
+      color: #ffffff !important;
+      font-family: 'Inter', 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+  }
+  .header-back-btn:hover {
+      background: #a0002a;
+      transform: translateY(-1px);
+  }
+  .header-back-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease;
+  }
+  .header-back-btn:hover svg {
+      transform: translateX(-3px);
+  }
+  @media (max-width: 768px) {
+      .header-back-btn {
+          padding: 6px 12px;
+          font-size: 13px;
+      }
+      .header-back-btn svg {
+          width: 14px;
+          height: 14px;
+      }
+  }
+</style>
+    <link rel="stylesheet" href="/assets/css/global-design-system.css">
 </head>
-
 <body class="edge-component-enabled" data-close-text="Close">
 
+<header class="simple-header">
+  <div class="wrapper">
+    <a aria-label="nissan link to homepage" class="logo-container" href="/index.html">
+      <img alt="Reliable Nissan" src="/assets/img/reliable-nissan-logo.png"/>
+    </a>
+    <a class="header-back-btn" href="/index.html">
+      <svg viewBox="0 0 24 24">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+  </div>
+</header>
 <!-- GTM noscript fallback -->
 <noscript>
-  <iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MBTP8B"
-    style="display:none;visibility:hidden" title="Google Tag Manager" width="0"></iframe>
+<iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MBTP8B" style="display:none;visibility:hidden" title="Google Tag Manager" width="0"></iframe>
 </noscript>
-
 <!-- Skip links -->
-<ul class="skiplinks" id="skiplinks">
-  <li><a href="#container">Skip to main content</a></li>
+<ul class="skiplinks">
+<li><a href="#container">Skip to main content</a></li>
 </ul>
-
 <!-- ============================================================
      HEADER
 ============================================================ -->
-<div class="header">
-  <header class="c_010D c_010D-theme-dark c_010D-logo-small" itemscope itemtype="http://schema.org/WPHeader">
-    <div class="wrapper">
-      <a aria-label="Nissan link to homepage" class="logo-container" href="/">
-        <picture class="logo svg">
-          <source media="screen and (min-width: 960px)"
-            srcset="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/svg/nissan-next-logo.svg"/>
-          <img alt="Nissan"
-            src="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/svg/nissan-next-logo-text.svg"
-            width="120" height="32" loading="eager"/>
-        </picture>
-      </a>
-      <p class="page-title">Contact us</p>
-    </div>
-  </header>
-</div>
-
 <!-- ============================================================
-     MAIN — CALLBACK FORM
+     MAIN â€” CALLBACK FORM
 ============================================================ -->
 <main id="container" role="main">
-  <div class="nf-wrapper">
-    <div class="nf-card">
-
-      <!-- LEFT: Crimson info panel -->
-      <div class="nf-left">
-        <p class="nf-left-headline">Your one stop solution for all services</p>
-        <p class="nf-left-sub">Please fill in your details and our team will reach out to you shortly.</p>
-        <div class="nf-services">
-
-          <div class="nf-service-item">
-            <div class="nf-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
-            </div>
-            <span class="nf-service-label">Request a Call Back</span>
-          </div>
-
-          <div class="nf-service-item">
-            <div class="nf-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            </div>
-            <span class="nf-service-label">Book A Service</span>
-          </div>
-
-          <div class="nf-service-item">
-            <div class="nf-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <span class="nf-service-label">Find A Dealer</span>
-          </div>
-
-          <div class="nf-service-item">
-            <div class="nf-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <span class="nf-service-label">Refer &amp; Earn</span>
-          </div>
-
-          <div class="nf-service-item">
-            <div class="nf-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8zM5.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM18.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg>
-            </div>
-            <span class="nf-service-label">Book A Test Drive</span>
-          </div>
-
-          <div class="nf-service-item">
-            <div class="nf-service-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg>
-            </div>
-            <span class="nf-service-label">Car Exchange</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- RIGHT: Form panel -->
-      <div class="nf-right">
-        <img alt="Nissan" class="nf-logo"
-          src="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/svg/nissan-next-logo.svg"
-          width="120" height="28" loading="lazy"
-          onerror="this.style.display='none'"/>
-
-        <h1 class="nf-form-title">Request a Call Back</h1>
-
-        <!-- FIX 7: Single clean submitCallback — duplicate at bottom of original removed -->
-        <form class="nf-form" id="callback-form" novalidate>
-
-          <div class="nf-field">
-            <label class="nf-label" for="cb-name">Full Name <span aria-hidden="true">*</span></label>
-            <input class="nf-input" id="cb-name" type="text"
-              placeholder="Enter your full name" required
-              autocomplete="name" aria-required="true"/>
-            <span class="nf-field-error" id="cb-name-err" role="alert">Please enter your full name.</span>
-          </div>
-
-          <div class="nf-field">
-            <label class="nf-label" for="cb-phone">Mobile Number <span aria-hidden="true">*</span></label>
-            <input class="nf-input" id="cb-phone" type="tel"
-              placeholder="10-digit mobile number" maxlength="10"
-              required autocomplete="tel" aria-required="true"
-              pattern="[6-9][0-9]{9}" inputmode="numeric"/>
-            <span class="nf-field-error" id="cb-phone-err" role="alert">Please enter a valid 10-digit mobile number.</span>
-          </div>
-
-          <div class="nf-field">
-            <label class="nf-label" for="cb-city">City</label>
-            <input class="nf-input" id="cb-city" type="text"
-              placeholder="Your city" autocomplete="address-level2"/>
-          </div>
-
-          <div class="nf-field">
-            <label class="nf-label" for="cb-interest">Interest Area</label>
-            <div class="nf-select-wrap">
-              <select class="nf-input nf-select" id="cb-interest" aria-label="Select interest area">
-                <option value="" disabled selected>Select an option</option>
-                <option value="new-car">New Car Purchase</option>
-                <option value="exchange">Car Exchange / Evaluation</option>
-                <option value="service">Service Schedule Support</option>
-                <option value="fleet">Fleet / Corporate Inquiry</option>
-                <option value="test-drive">Book A Test Drive</option>
-              </select>
-            </div>
-          </div>
-
-          <button class="nf-btn-primary" type="submit" id="cb-submit-btn">
+<div class="nf-wrapper">
+<div class="nf-card">
+<!-- LEFT: Crimson info panel -->
+<div class="nf-left">
+<p class="nf-left-headline">Your one stop solution for all services</p>
+<p class="nf-left-sub">Please fill in your details and our team will reach out to you shortly.</p>
+<div class="nf-services">
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect height="4" rx="1" width="6" x="9" y="3"></rect><path d="M9 12h6M9 16h4"></path></svg>
+</div>
+<span class="nf-service-label">Request a Call Back</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+</div>
+<span class="nf-service-label">Book A Service</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+</div>
+<span class="nf-service-label">Find A Dealer</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<span class="nf-service-label">Refer &amp; Earn</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><rect height="13" rx="2" width="15" x="1" y="3"></rect><path d="M16 8h4l3 3v5h-7V8zM5.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM18.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path></svg>
+</div>
+<span class="nf-service-label">Book A Test Drive</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 01-4 4H3"></path></svg>
+</div>
+<span class="nf-service-label">Car Exchange</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: Form panel -->
+<div class="nf-right">
+<h1 class="nf-form-title">Request a Call Back</h1>
+<!-- FIX 7: Single clean submitCallback â€” duplicate at bottom of original removed -->
+<form class="nf-form" data-custom-submit="true" data-form-name="Request a Callback" id="callback-form" novalidate="">
+<div class="nf-field">
+<label class="nf-label" for="cb-name">Full Name <span aria-hidden="true">*</span></label>
+<input aria-required="true" autocomplete="name" class="nf-input" id="cb-name" name="Full Name" placeholder="Enter your full name" required="" type="text"/>
+<span class="nf-field-error" id="cb-name-err" role="alert">Please enter your full name.</span>
+</div>
+<div class="nf-field">
+<label class="nf-label" for="cb-phone">Mobile Number <span aria-hidden="true">*</span></label>
+<input aria-required="true" autocomplete="tel" class="nf-input" id="cb-phone" inputmode="numeric" maxlength="10" name="Mobile Number" pattern="[6-9][0-9]{9}" placeholder="10-digit mobile number" required="" type="tel"/>
+<span class="nf-field-error" id="cb-phone-err" role="alert">Please enter a valid 10-digit mobile number.</span>
+</div>
+<div class="nf-field">
+<label class="nf-label" for="cb-city">City</label>
+<input autocomplete="address-level2" class="nf-input" id="cb-city" name="City" placeholder="Your city" type="text"/>
+</div>
+<div class="nf-field">
+<label class="nf-label" for="cb-interest">Interest Area</label>
+<div class="nf-select-wrap">
+<select aria-label="Select interest area" class="nf-input nf-select" id="cb-interest" name="Interest Area">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="new-car">New Car Purchase</option>
+<option value="exchange">Car Exchange / Evaluation</option>
+<option value="service">Service Schedule Support</option>
+<option value="fleet">Fleet / Corporate Inquiry</option>
+<option value="test-drive">Book A Test Drive</option>
+</select>
+</div>
+</div>
+<button class="nf-btn-primary" id="cb-submit-btn" type="submit">
             Submit Request
           </button>
-
-          <div class="nf-consent">
-            <input type="checkbox" id="cb-consent" checked aria-label="Consent to terms"/>
-            <label for="cb-consent">By continuing, I agree to the
-              <a href="/privacy.html" target="_blank" rel="noopener">Terms of Use &amp; Privacy Policy</a>
-            </label>
+<div class="nf-consent">
+<input aria-label="Consent to terms" checked="" id="cb-consent" type="checkbox"/>
+<label for="cb-consent">By continuing, I agree to the
+              <a href="/privacy.html" rel="noopener" target="_blank">Terms of Use &amp; Privacy Policy</a>
+</label>
+</div>
+<div aria-live="polite" class="nf-toast" id="cb-toast" role="status">
+            Thank you! Your request has been submitted successfully. Nissan India will contact you soon.
           </div>
-
-          <div class="nf-toast" id="cb-toast" role="status" aria-live="polite">
-            ✅ &nbsp;Thank you! Our team will call you back shortly.
-          </div>
-
-        </form>
-      </div>
-    </div>
-  </div>
+</form>
+</div>
+</div>
+</div>
 </main>
-
 <!-- ============================================================
      BREADCRUMB
 ============================================================ -->
 <div class="grid-row bleed">
-  <div class="c_054-2">
-    <div class="grid-row">
-      <div class="col-12">
-        <nav aria-label="breadcrumb">
-          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-              <a href="/" itemprop="item"><span itemprop="name">Nissan India</span></a>
-              <meta content="1" itemprop="position"/>
-            </li>
-            <li><span aria-current="page">Contact us</span></li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </div>
+<div class="c_054-2">
+<div class="grid-row">
+<div class="col-12">
 </div>
-
+</div>
+</div>
+</div>
+<!-- ============================================================
 <!-- ============================================================
      FOOTER
 ============================================================ -->
-<footer class="grid-row bleed" id="footer-element" itemscope itemtype="http://schema.org/WPFooter">
-  <div class="c_054-3 rebrand-enabled">
-    <div class="grid-row">
-      <div class="footer-container col-3">
-        <h3 class="footer-heading"><span>SHOPPING TOOLS</span></h3>
-        <ul>
-          <li><a href="/vehicles/brochures.html">Download Brochure</a></li>
-          <li><a href="/login.html?ReturnUrl=book-a-car&utm_source=pace&utm_medium=direct" target="_blank" rel="noopener">Book A Car</a></li>
-          <li><a href="/request-a-callback.html" target="_blank" rel="noopener">Request A Call Back</a></li>
-          <li><a href="/corporate-sales.html">Corporate Sales</a></li>
-          <li><a href="/find-a-dealer.html" target="_blank" rel="noopener">Nissan Dealer Locator</a></li>
-          <li><a href="/gravite/#/configurator" target="_blank" rel="noopener">Configure Gravite</a></li>
-          <li><a href="/vehicles/new/magnite/configurator.html" target="_blank" rel="noopener">Configure Magnite</a></li>
-        </ul>
-      </div>
-      <div class="footer-container col-3">
-        <h3 class="footer-heading"><span>OWNER SERVICES</span></h3>
-        <ul>
-          <li><a href="/login.html" target="_blank" rel="noopener">NISSAN ONE</a></li>
-          <li><a href="/nissanconnect.html">Nissan Connect</a></li>
-          <li><a href="/login.html?utm_source=bookaservice" target="_blank" rel="noopener">Book A Service</a></li>
-          <li><a href="/login.html?utm_source=pmp" target="_blank" rel="noopener">Pre-paid Maintenance Plan</a></li>
-          <li><a href="/all_about_ownership/Accessories.html">Accessories</a></li>
-          <li><a href="https://nissanmerchandise.in/" target="_blank" rel="noopener noreferrer">Nissan Merchandise</a></li>
-        </ul>
-      </div>
-      <div class="footer-container col-3">
-        <h3 class="footer-heading"><span>Corporate</span></h3>
-        <ul>
-          <li><a href="/experience-nissan.html">Experience Nissan</a></li>
-          <li><a href="/csr.html">Corporate Social Responsibility</a></li>
-          <li><a href="/experience-nissan/latest-news.html">Latest News</a></li>
-          <li><a href="/careers.html">Careers</a></li>
-          <li><a href="/contact-us.html">Contact Us</a></li>
-          <li><a href="/dealer-registration.html" target="_blank" rel="noopener">Become A Nissan Partner</a></li>
-        </ul>
-      </div>
-      <div class="footer-container col-3 last">
-        <h3 class="footer-heading"><span>Nissan Social</span></h3>
-        <ul>
-          <li><a href="/social-hub.html?platform=facebook" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          <li><a href="/social-hub.html?platform=twitter" target="_blank" rel="noopener noreferrer">Twitter / X</a></li>
-          <li><a href="/social-hub.html?platform=youtube" target="_blank" rel="noopener noreferrer">YouTube</a></li>
-          <li><a href="/social-hub.html?platform=instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="c_025">
-    <div class="grid-row">
-      <div class="col-12">
-        <ul class="footer-options">
-          <li><a href="/global-site.html">Global Site</a></li>
-          <li><a href="/sitemap.html">Site Map</a></li>
-          <li><a href="https://ami.nissanmotornews.com/en/channels/channel-2b2d556d1494376ccef2a24479041486">Newsroom</a></li>
-        </ul>
-        <div class="footer-legal">
-          <ul style="flex-direction:row;gap:16px;">
-            <li><a href="/privacy.html">Privacy Policy</a></li>
-            <li><a href="/copyright.html">Copyright &amp; Disclaimer</a></li>
-          </ul>
-          <p class="footer-copyright">© Nissan 2026</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ============================================================
-     FLOATING NAV
-============================================================ -->
-<nav class="c_255 floating-nav" aria-label="Quick links">
-  <ul class="nav-list" role="region" aria-label="useful links">
-    <li class="nav-item">
-      <a class="nav-link" href="/login.html?ReturnUrl=book-a-car&utm_source=pace&utm_medium=direct" target="_blank" rel="noopener" title="Book a Car">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg>
-        <span>Book a Car</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/login.html?utm_source=bookaservice" target="_blank" rel="noopener" title="Book A Service">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        <span>Book A Service</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/request-a-callback.html" target="_blank" rel="noopener" title="Request A Call">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11 19.79 19.79 0 01.22 2.38 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.56-.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-        <span>Request A Call</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/Book-Test-Drive.html" target="_blank" rel="noopener" title="Book A Test Drive">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        <span>Test Drive</span>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/login.html" target="_blank" rel="noopener" title="Nissan One">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Nissan One</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
 <!-- ============================================================
      COOKIE BANNER
 ============================================================ -->
-<div class="c_128" id="cookie-banner" role="region" aria-label="Cookie notice">
-  <p>We use cookies on our website for identification and analysis purposes. By using this website you consent to the storing and accessing of cookies on your device.</p>
-  <button type="button" class="disclaimer-close-text" id="cookie-dismiss">HIDE THIS MESSAGE</button>
+<div aria-label="Cookie notice" class="c_128" id="cookie-banner" role="region">
+<p>We use cookies on our website for identification and analysis purposes. By using this website you consent to the storing and accessing of cookies on your device.</p>
+<button class="disclaimer-close-text" id="cookie-dismiss" type="button">HIDE THIS MESSAGE</button>
 </div>
-
 <!-- ============================================================
-     SCRIPTS — all deferred, none blocking render
+     SCRIPTS â€” all deferred, none blocking render
 ============================================================ -->
-
-<!-- FIX 8: Main JS bundles deferred — don't block parsing or rendering -->
-<script defer
-  src="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/scripts/compiled/main.min.js">
+<!-- FIX 8: Main JS bundles deferred â€” don't block parsing or rendering -->
+<script defer="" src="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/scripts/compiled/main.min.js">
 </script>
-<script defer
-  src="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/scripts/compiled/main-forms.min.js">
+<script defer="" src="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/scripts/compiled/main-forms.min.js">
 </script>
-
-<!-- FIX 9: Adobe DTM loaded AFTER window load — was the biggest single blocker -->
+<!-- FIX 9: Adobe DTM loaded AFTER window load â€” was the biggest single blocker -->
 <script>
   window.addEventListener('load', function() {
     var dtm = document.createElement('script');
@@ -708,18 +631,27 @@
     document.head.appendChild(dtm);
   });
 </script>
-
 <!-- FIX 10: Single canonical submitCallback (duplicate at bottom removed) -->
 <script>
-  (function() {
-    var form = document.getElementById('callback-form');
-    var submitBtn = document.getElementById('cb-submit-btn');
-    var toast = document.getElementById('cb-toast');
+  /* ============================================================
+   * Request a Callback â€” Form Submit Handler
+   * Fixed: Now makes a real API call and shows proper feedback.
+   * ============================================================ */
+  (function () {
+    'use strict';
 
-    function showError(inputId, errId, show) {
+    var form      = document.getElementById('callback-form');
+    var submitBtn = document.getElementById('cb-submit-btn');
+    var toast     = document.getElementById('cb-toast');
+
+    // ---- Validation helpers ----
+    function validatePhone(v) { return /^[6-9][0-9]{9}$/.test(v); }
+
+    function setFieldError(inputId, errId, hasError) {
       var input = document.getElementById(inputId);
       var err   = document.getElementById(errId);
-      if (show) {
+      if (!input || !err) return;
+      if (hasError) {
         input.classList.add('error');
         err.classList.add('visible');
       } else {
@@ -728,52 +660,301 @@
       }
     }
 
-    function validatePhone(v) {
-      return /^[6-9][0-9]{9}$/.test(v);
+    function showGlobalError(message) {
+      var existing = form.querySelector('.cb-global-error');
+      if (!existing) {
+        existing = document.createElement('div');
+        existing.className = 'cb-global-error';
+        existing.style.cssText = 'color:#c00;background:#fff8f8;border:1px solid #c00;border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:14px;text-align:center;';
+        form.prepend(existing);
+      }
+      existing.textContent = message;
+      existing.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    form.addEventListener('submit', function(e) {
+    function clearGlobalError() {
+      var existing = form.querySelector('.cb-global-error');
+      if (existing) existing.remove();
+    }
+
+    // ---- Resolve API URL ----
+    function getApiUrl() {
+      if (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL) {
+        return window.APP_CONFIG.API_BASE_URL;
+      }
+      var h = window.location.hostname;
+      return (h === 'localhost' || h === '127.0.0.1')
+        ? 'http://localhost:5000/api'
+        : (window.location.origin + '/api');
+    }
+
+    // ---- Main submit handler ----
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var name  = document.getElementById('cb-name').value.trim();
-      var phone = document.getElementById('cb-phone').value.trim();
-      var consent = document.getElementById('cb-consent').checked;
-      var valid = true;
+      clearGlobalError();
 
-      showError('cb-name',  'cb-name-err',  !name);
-      showError('cb-phone', 'cb-phone-err', !validatePhone(phone));
-      if (!name || !validatePhone(phone)) return;
+      var nameVal    = document.getElementById('cb-name').value.trim();
+      var phoneVal   = document.getElementById('cb-phone').value.trim();
+      var cityVal    = document.getElementById('cb-city') ? document.getElementById('cb-city').value.trim() : '';
+      var interestEl = document.getElementById('cb-interest');
+      var interestVal = interestEl ? interestEl.value : '';
 
-      // Success path
-      submitBtn.textContent = 'Submitted ✓';
+      var nameErr  = !nameVal;
+      var phoneErr = !validatePhone(phoneVal);
+
+      setFieldError('cb-name',  'cb-name-err',  nameErr);
+      setFieldError('cb-phone', 'cb-phone-err', phoneErr);
+
+      if (nameErr || phoneErr) {
+        var firstErrorInput = form.querySelector('.error');
+        if (firstErrorInput) firstErrorInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // ---- Loading state ----
       submitBtn.disabled = true;
-      toast.classList.add('visible');
-      setTimeout(function() { toast.classList.remove('visible'); }, 5000);
+      submitBtn.textContent = 'Submittingâ€¦';
+
+      // ---- Build payload ----
+      var payload = {
+        formName:       'Request a Callback',
+        'Full Name':    nameVal,
+        'Mobile Number': phoneVal,
+        'City':         cityVal || 'Not provided',
+        'Interest Area': interestVal || 'Not specified'
+      };
+
+      var apiUrl = getApiUrl() + '/forms/submit';
+      console.log('[Callback Form] Submitting to:', apiUrl);
+      console.log('[Callback Form] Payload:', payload);
+
+      // ---- API call ----
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function (response) {
+        return response.json().then(function (data) {
+          return { ok: response.ok, status: response.status, data: data };
+        });
+      })
+      .then(function (result) {
+        console.log('[Callback Form] Response:', result);
+        if (result.ok && result.data.success) {
+          // âœ… SUCCESS
+          submitBtn.textContent = 'Submitted âœ“';
+          submitBtn.disabled = true;
+          if (window.showGlobalToast) {
+            window.showGlobalToast('Your request has been submitted successfully. Nissan India will contact you soon.', 'success');
+          } else {
+            toast.classList.add('visible');
+          }
+          setTimeout(function () { window.location.href = '/index.html'; }, 4000);
+        } else {
+          throw new Error(result.data.message || 'Submission failed. Please try again.');
+        }
+      })
+      .catch(function (error) {
+        console.error('[Callback Form] Error:', error.message);
+        // âŒ ERROR â€” reset button and show message
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+        var msg = (error.message && error.message !== 'Failed to fetch')
+          ? error.message
+          : 'Unable to connect. Please check your internet connection or call us at 1800-209-3456.';
+        if (window.showGlobalToast) {
+            window.showGlobalToast(msg, 'error');
+        } else {
+            showGlobalError(msg);
+        }
+      });
     });
 
-    // Inline validation on blur
-    document.getElementById('cb-name').addEventListener('blur', function() {
-      showError('cb-name', 'cb-name-err', !this.value.trim());
-    });
-    document.getElementById('cb-phone').addEventListener('blur', function() {
-      showError('cb-phone', 'cb-phone-err', !validatePhone(this.value.trim()));
-    });
+    // ---- Inline validation on blur ----
+    var nameInput  = document.getElementById('cb-name');
+    var phoneInput = document.getElementById('cb-phone');
+    if (nameInput)  nameInput.addEventListener('blur',  function () { setFieldError('cb-name',  'cb-name-err',  !this.value.trim()); });
+    if (nameInput)  nameInput.addEventListener('input', function () { if (this.value.trim()) setFieldError('cb-name', 'cb-name-err', false); });
+    if (phoneInput) phoneInput.addEventListener('blur',  function () { setFieldError('cb-phone', 'cb-phone-err', !validatePhone(this.value.trim())); });
+    if (phoneInput) phoneInput.addEventListener('input', function () { if (validatePhone(this.value.trim())) setFieldError('cb-phone', 'cb-phone-err', false); });
 
-    // Cookie banner dismiss
+    // ---- Cookie banner dismiss ----
     var cookieDismiss = document.getElementById('cookie-dismiss');
     var cookieBanner  = document.getElementById('cookie-banner');
-    if (cookieDismiss) {
-      cookieDismiss.addEventListener('click', function() {
+    if (cookieDismiss && cookieBanner) {
+      cookieDismiss.addEventListener('click', function () {
         cookieBanner.classList.add('hidden');
-        try { sessionStorage.setItem('nissan_cookies_dismissed', '1'); } catch(e) {}
+        try { sessionStorage.setItem('nissan_cookies_dismissed', '1'); } catch (ex) {}
       });
       try {
         if (sessionStorage.getItem('nissan_cookies_dismissed')) {
           cookieBanner.classList.add('hidden');
         }
-      } catch(e) {}
+      } catch (ex) {}
     }
+
   })();
 </script>
 
-</body>
+<style>
+#injected-global-addresses {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: #fff;
+    padding: 30px 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 40px auto;
+    max-width: 1200px;
+    font-family: 'Inter', sans-serif;
+}
+#injected-global-addresses .gfa-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 30px;
+    position: relative;
+    flex: 1;
+}
+#injected-global-addresses .gfa-item:not(:last-child) {
+    border-right: 2px solid #c3002f;
+}
+#injected-global-addresses .gfa-icon {
+    width: 30px;
+    height: 30px;
+    background: #c3002f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+#injected-global-addresses .gfa-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+#injected-global-addresses .gfa-content {
+    display: flex;
+    flex-direction: column;
+}
+#injected-global-addresses .gfa-content h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-content p {
+    font-size: 13px;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-phone {
+    font-size: 22px;
+    font-weight: 800;
+    color: #c3002f;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#injected-global-addresses .gfa-phone svg {
+    width: 20px;
+    height: 20px;
+    fill: #c3002f;
+}
+
+@media (max-width: 900px) {
+    #injected-global-addresses {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    #injected-global-addresses .gfa-item {
+        border-right: none !important;
+        border-bottom: 2px solid #c3002f;
+        padding: 0 0 30px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+    #injected-global-addresses .gfa-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+</style>
+<div id="injected-global-addresses">
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>MOTI NAGAR</h4>
+<p>21 NAJAFGARH ROAD<br/>INDUSTRIAL AREA<br/>DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>DWARKA</h4>
+<p>PLOT NO 59 GOODLUCK<br/>PALAZA ROAD NO -9 SECTOR 20<br/>DWARKA NEW DELHI - 110075</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>WORKSHOP</h4>
+<p>62 INDUSTRIAL AREA<br/>RAMA ROAD MOTI NAGAR<br/>NEW DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9619232316">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9619232316
+            </a>
+</div>
+</div>
+</div>
+<footer class="grid-row bleed" id="footer-element">
+<div class="c_025">
+<div class="grid-row">
+<div class="col-12">
+<ul class="footer-options">
+<li>
+<a href="http://www.nissan-global.com/" title="">Global Site</a>
+</li>
+<li><a href="/sitemap.html" title="">Site Map</a></li>
+<li>
+<a href="https://ami.nissanmotornews.com/en/channels/channel-2b2d556d1494376ccef2a24479041486" title="">Newsroom</a>
+</li>
+</ul>
+<div class="footer-legal">
+<ul>
+<li><a href="/privacy.html" title="">Privacy Policy</a></li>
+<li>
+<a href="/copyright.html" title="">Copyright &amp; Disclaimer</a>
+</li>
+</ul>
+<p class="footer-copyright">Â© Nissan 2026</p>
+</div>
+</div>
+</div>
+</div>
+</footer></body>
 </html>
+

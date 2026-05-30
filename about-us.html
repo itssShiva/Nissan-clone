@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nissan India</title>
+    
+    <!-- Favicon -->
+    <link href="/assets/img/reliable-nissan-logo.png" rel="icon" type="image/png"/>
+    <link href="/assets/img/reliable-nissan-logo.png" rel="apple-touch-icon"/>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* INJECTED GLOBAL NAVBAR REMOVAL (Custom for this page) */
+        .global-back-to-home {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(195, 0, 47, 0.9);
+            color: #ffffff !important;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none !important;
+            box-shadow: 0 8px 24px rgba(195, 0, 47, 0.4), 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(8px);
+        }
+
+        .global-back-to-home:hover {
+            background: #c3002f;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(195, 0, 47, 0.5), 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .global-back-to-home:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(195, 0, 47, 0.4);
+        }
+
+        .global-back-to-home svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.3s ease;
+        }
+
+        .global-back-to-home:hover svg {
+            transform: translateX(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .global-back-to-home {
+                top: 16px;
+                right: 16px;
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #111827; /* Dark fallback */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1503376713297-c8166c303f0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            z-index: 1;
+            transform: scale(1.05);
+            animation: kenBurns 20s ease-out forwards;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+            max-width: 900px;
+        }
+
+        .hero-logo {
+            width: 140px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+            animation: fadeUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0.2s both;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #d1d5db 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s both;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            opacity: 0.9;
+            animation: fadeUp 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0.6s both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Vision Section */
+        .vision {
+            padding: 120px 20px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .vision-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .vision h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #c3002f;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .vision p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        /* Pillars Grid */
+        .pillars {
+            padding: 100px 20px;
+            background: #111827;
+            color: #fff;
+        }
+
+        .pillars-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .pillars-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 48px 32px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            backdrop-filter: blur(12px);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(195, 0, 47, 0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #c3002f 0%, #8a0021 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            box-shadow: 0 10px 20px rgba(195, 0, 47, 0.3);
+        }
+
+        .pillar-icon svg {
+            width: 36px;
+            height: 36px;
+            fill: none;
+            stroke: #fff;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #f3f4f6;
+        }
+
+        .pillar-card p {
+            font-size: 1rem;
+            color: #9ca3af;
+            line-height: 1.7;
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 80px 20px;
+            background: #ffffff;
+            color: #111827;
+        }
+
+        .locations-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .locations-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #c3002f;
+            letter-spacing: -0.02em;
+        }
+
+        .locations-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            background: #fff;
+            padding: 40px 20px;
+            border-top: 2px solid #fcebea;
+            border-bottom: 2px solid #fcebea;
+            margin: 0 auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-radius: 12px;
+        }
+        .loc-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 0 40px;
+            position: relative;
+            flex: 1;
+        }
+        .loc-item:not(:last-child) {
+            border-right: 2px solid #c3002f;
+        }
+        .loc-icon {
+            width: 36px;
+            height: 36px;
+            background: #c3002f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: 2px 4px 8px rgba(195,0,47,0.3);
+        }
+        .loc-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: #fff;
+        }
+        .loc-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .loc-content h3 {
+            font-size: 22px;
+            font-weight: 900;
+            color: #000;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .loc-content p {
+            font-size: 14px;
+            color: #333;
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .loc-phone {
+            font-size: 24px;
+            font-weight: 900;
+            color: #c3002f;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .loc-phone svg {
+            width: 22px;
+            height: 22px;
+            fill: #c3002f;
+        }
+
+        @media (max-width: 900px) {
+            .locations-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .loc-item {
+                border-right: none !important;
+                border-bottom: 2px solid #c3002f;
+                padding: 0 0 40px 0;
+                width: 100%;
+                max-width: 400px;
+            }
+            .loc-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+
+        /* Innovation Image Banner */
+        .innovation-banner {
+            position: relative;
+            height: 60vh;
+            background: url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        .innovation-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(17, 24, 39, 0.9) 0%, rgba(17, 24, 39, 0.4) 100%);
+        }
+
+        .innovation-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .innovation-content h2 {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 900;
+            color: #fff;
+            max-width: 600px;
+            line-height: 1.1;
+        }
+        
+        .innovation-content h2 span {
+            color: #c3002f;
+        }
+
+        /* Footer Placeholder */
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        footer img {
+            height: 30px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        /* Intersection Observer Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+    </style>
+    <link rel="stylesheet" href="/assets/css/global-design-system.css">
+</head>
+<body>
+
+    <!-- Global Back to Home Button -->
+    <a href="/index.html" class="global-back-to-home">
+        <svg viewBox="0 0 24 24">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="/assets/img/reliable-nissan-logo.png" alt="Nissan Logo" class="hero-logo">
+            <h1>Driven by Innovation</h1>
+            <p>Empowering journeys and transforming the way we drive through cutting-edge technology and human-centric design.</p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision reveal">
+        <div class="vision-container">
+            <h2>Nissan Intelligent Mobility</h2>
+            <p>At Nissan, our purpose is to drive innovation to enrich people's lives. We are committed to a world of zero emissions and zero fatalities, pioneering a future where cars are powered, driven, and integrated into society seamlessly.</p>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section class="pillars">
+        <div class="pillars-header reveal">
+            <h2>Our Core Pillars</h2>
+        </div>
+        <div class="pillars-grid">
+            
+            <div class="pillar-card reveal delay-1">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <h3>Electrification</h3>
+                <p>Leading the charge into an electric future with groundbreaking EV technologies like e-POWER and the Nissan LEAF, reducing carbon footprints globally.</p>
+            </div>
+
+            <div class="pillar-card reveal delay-2">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                        <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                        <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+                    </svg>
+                </div>
+                <h3>Autonomous Drive</h3>
+                <p>Enhancing safety and peace of mind with ProPILOT advanced driver-assistance systems designed to empower and protect drivers on every journey.</p>
+            </div>
+
+            <div class="pillar-card reveal delay-3">
+                <div class="pillar-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3>Quality & Trust</h3>
+                <p>Delivering uncompromised Japanese engineering and Monozukuri (craftsmanship) to ensure unmatched reliability and long-lasting customer satisfaction.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="locations">
+        <div class="locations-header reveal">
+            <h2>Our Locations</h2>
+        </div>
+        <div class="locations-container">
+            
+            <div class="loc-item reveal delay-1">
+                <div class="loc-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="loc-content">
+                    <h3>MOTI NAGAR</h3>
+                    <p>21 NAJAFGARH ROAD<br>INDUSTRIAL AREA<br>DELHI - 110015</p>
+                    <a href="tel:9355000958" class="loc-phone">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        9355000958
+                    </a>
+                </div>
+            </div>
+
+            <div class="loc-item reveal delay-2">
+                <div class="loc-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="loc-content">
+                    <h3>DWARKA</h3>
+                    <p>PLOT NO 59 GOODLUCK<br>PALAZA ROAD NO -9 SECTOR 20<br>DWARKA NEW DELHI - 110075</p>
+                    <a href="tel:9355000958" class="loc-phone">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        9355000958
+                    </a>
+                </div>
+            </div>
+
+            <div class="loc-item reveal delay-3">
+                <div class="loc-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <div class="loc-content">
+                    <h3>WORKSHOP</h3>
+                    <p>62 INDUSTRIAL AREA<br>RAMA ROAD MOTI NAGAR<br>NEW DELHI - 110015</p>
+                    <a href="tel:9619232316" class="loc-phone">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        9619232316
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Innovation Banner -->
+    <section class="innovation-banner">
+        <div class="innovation-content reveal">
+            <h2>Shaping the <span>Future</span> of Mobility in India</h2>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <img src="/assets/img/reliable-nissan-logo.png" alt="Nissan">
+        <p>&copy; 2026 Nissan India. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>

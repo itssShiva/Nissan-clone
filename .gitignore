@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+server/node_modules
+dist
+build
+.pnp
+.pnp.js
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+server/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Python / Scripts
+__pycache__
+*.pyc
+.venv
+venv
+env/
+*.txt # Ignoring local text files generated like remaining_errors.txt, all_errors.txt (Optional but good for cleanliness)
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# IDE / System
+.gemini
+.antigravity

@@ -1,24 +1,608 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html class="no-js" dir="ltr" lang="en-IN" prefix="og: http://ogp.me/ns#">
 <head>
-<link href="/assets/css/modern.css" rel="stylesheet">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta charset="utf-8"/>
-<title>Guest Profile</title>
-<link href="/common_onenissan/css/app.css" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="26.05.30.NISSAN" name="version"/>
+<meta content="IN" name="geo.country"/>
+<meta content="For Nissan Care, contact us on Toll-Free Number: 1-800-209-3456" name="description"/>
+<title>Guest Profile | Contact Nissan India | Nissan India</title>
+<link href="/assets/img/reliable-nissan-logo.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/img/reliable-nissan-logo.png" rel="apple-touch-icon"/>
+<style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* === SKIP LINK === */
+    .skiplinks { list-style: none; }
+    .skiplinks a {
+      position: absolute; left: -9999px;
+    }
+    .skiplinks a:focus { left: 0; top: 0; z-index: 9999; background: #c3002f; color: #fff; padding: 8px 16px; }
+
+    /* === HEADER === */
+    .c_010D {
+      background: #1a1a1a;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    .c_010D .wrapper {
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo-container { display: flex; align-items: center; text-decoration: none; }
+    .logo-container picture img { height: 32px; width: auto; display: block; }
+    .page-title { color: #fff; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+
+    /* === MAIN CARD LAYOUT === */
+    .nf-wrapper {
+      max-width: 1100px; margin: 48px auto; padding: 0 24px 48px;
+    }
+    .nf-card {
+      display: flex; border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.12);
+    }
+
+    /* === LEFT PANEL === */
+    .nf-left {
+      background: #c3002f;
+      color: #fff;
+      padding: 48px 40px;
+      flex: 0 0 340px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .nf-left-headline {
+      font-size: 1.5rem; font-weight: 700; line-height: 1.3;
+    }
+    .nf-left-sub {
+      font-size: .9rem; opacity: .88; line-height: 1.6;
+    }
+    .nf-services { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; }
+    .nf-service-item {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .nf-service-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(255,255,255,.15); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nf-service-icon svg {
+      width: 18px; height: 18px;
+      stroke: #fff; fill: none; stroke-width: 1.8;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .nf-service-label { font-size: .88rem; font-weight: 500; }
+
+    /* === RIGHT PANEL (FORM) === */
+    .nf-right {
+      background: #fff; flex: 1;
+      padding: 48px 48px 56px;
+      display: flex; flex-direction: column;
+    }
+    .nf-logo { height: 28px; width: auto; margin-bottom: 28px; }
+    .nf-form-title {
+      font-size: 1.75rem; font-weight: 700;
+      color: #1a1a1a; margin-bottom: 32px;
+      border-bottom: 3px solid #c3002f;
+      padding-bottom: 12px;
+    }
+    .nf-form { display: flex; flex-direction: column; gap: 20px; }
+    .nf-field { display: flex; flex-direction: column; gap: 6px; }
+    .nf-label { font-size: .82rem; font-weight: 600; color: #444; letter-spacing: .04em; text-transform: uppercase; }
+    .nf-input {
+      height: 48px; padding: 0 14px;
+      border: 1.5px solid #d0d0d0; border-radius: 3px;
+      font-size: .95rem; color: #1a1a1a;
+      outline: none; transition: border-color .2s;
+      appearance: none; background: #fff;
+    }
+    .nf-input:focus { border-color: #c3002f; box-shadow: 0 0 0 3px rgba(195,0,47,.1); }
+    .nf-input.error { border-color: #e00; }
+    .nf-select-wrap { position: relative; }
+    .nf-select-wrap::after {
+      content: '▾'; position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%); pointer-events: none; color: #888;
+    }
+    .nf-select { width: 100%; cursor: pointer; padding-right: 36px; }
+    .nf-btn-primary {
+      height: 52px; background: #c3002f; color: #fff;
+      border: none; border-radius: 3px; font-size: 1rem;
+      font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      cursor: pointer; transition: background .2s, transform .1s;
+      margin-top: 4px;
+    }
+    .nf-btn-primary:hover:not(:disabled) { background: #a0002a; }
+    .nf-btn-primary:active:not(:disabled) { transform: scale(.98); }
+    .nf-btn-primary:disabled { background: #999; cursor: not-allowed; }
+    .nf-consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .82rem; color: #666;
+    }
+    .nf-consent input { margin-top: 2px; accent-color: #c3002f; flex-shrink: 0; }
+    .nf-consent a { color: #c3002f; }
+    .nf-field-error {
+      font-size: .78rem; color: #e00; display: none;
+    }
+    .nf-field-error.visible { display: block; }
+
+    /* === TOAST === */
+    .nf-toast {
+      display: none; background: #1a7a3c; color: #fff;
+      padding: 14px 18px; border-radius: 4px;
+      font-size: .9rem; font-weight: 500;
+      animation: slideIn .3s ease;
+    }
+    .nf-toast.visible { display: flex; align-items: center; gap: 8px; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      .nf-card { flex-direction: column; }
+      .nf-left { flex: none; padding: 32px 24px; }
+      .nf-right { padding: 32px 24px 40px; }
+      .nf-form-title { font-size: 1.4rem; }
+    }
+</style>
+<script src="/src/components/Layout.js" type="module"></script>
+<script src="/src/config.js"></script>
+<script src="/assets/js/form-validation.js"></script>
+<style>
+  /* Reliable Nissan Logo Fixes */
+  .logo-container .logo img, 
+  .logo-container .logo source,
+  header .logo svg img,
+  footer .logo svg img {
+    object-fit: contain !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 45px !important;
+  }
+</style>
+<!-- INJECTED GLOBAL NAVBAR REMOVAL -->
+<style id="global-navbar-removal">
+  /* Hide all complex navigation elements globally */
+  .burger-menu-wrapper,
+  aside.sidebar-mobile,
+  aside.sidebar-desktop,
+  .nissanNav-container,
+  .fg.subnav,
+  .header-menu,
+  #gnavi,
+  .gnavi_list,
+  .c_010D-overlay,
+  .menu,
+  nav[aria-label=""] {
+      display: none !important;
+  }
+  
+  /* Modern Premium "Back to Home" Button */
+  .global-back-to-home {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #c3002f;
+      color: #ffffff !important;
+      font-family: 'Inter', 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none !important;
+      box-shadow: 0 4px 12px rgba(195, 0, 47, 0.3), 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      backdrop-filter: blur(4px);
+  }
+
+  .global-back-to-home:hover {
+      background: #a0002a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(195, 0, 47, 0.4), 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  .global-back-to-home:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(195, 0, 47, 0.3);
+  }
+
+  .global-back-to-home svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease;
+  }
+
+  .global-back-to-home:hover svg {
+      transform: translateX(-3px);
+  }
+
+  @media (max-width: 768px) {
+      .global-back-to-home {
+          top: 12px;
+          right: 16px;
+          padding: 8px 16px;
+          font-size: 13px;
+      }
+      .global-back-to-home svg {
+          width: 16px;
+          height: 16px;
+      }
+  }
+</style>
+<!-- END INJECTED GLOBAL NAVBAR REMOVAL -->
+    <link rel="stylesheet" href="/assets/css/global-design-system.css">
 </head>
 <body>
-<!-- Header placeholder -->
-<header>
-<div class="logo"><a href="/"><img alt="Nissan" src="/common/images/nissan-logo.svg"/></a></div>
-</header>
-<main id="container_19" role="main">
-<h1>Guest Profile</h1>
-<p>This page was auto‑generated as a placeholder for a missing internal link.</p>
+<!-- INJECTED BACK TO HOME BUTTON -->
+<a class="global-back-to-home" href="/index.html" id="global-back-to-home-btn">
+<svg viewBox="0 0 24 24">
+<line x1="19" x2="5" y1="12" y2="12"></line>
+<polyline points="12 19 5 12 12 5"></polyline>
+</svg>
+    Back to Home
+</a>
+<!-- END INJECTED BACK TO HOME BUTTON -->
+<div id="app-navbar" style="display: block; position: sticky; top: 0; z-index: 10000; width: 100%;"></div>
+<main id="container" role="main">
+<div class="nf-wrapper">
+<div class="nf-card">
+<!-- LEFT: Crimson info panel -->
+<div class="nf-left">
+<p class="nf-left-headline">Your one stop solution for all services</p>
+<p class="nf-left-sub">Please fill in your details and our team will reach out to you shortly.</p>
+<div class="nf-services">
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect height="4" rx="1" width="6" x="9" y="3"></rect><path d="M9 12h6M9 16h4"></path></svg>
+</div>
+<span class="nf-service-label">Request a Call Back</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+</div>
+<span class="nf-service-label">Book A Service</span>
+</div>
+<div class="nf-service-item">
+<div class="nf-service-icon">
+<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+</div>
+<span class="nf-service-label">Find A Dealer</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: Form panel -->
+<div class="nf-right">
+<img alt="Nissan" class="nf-logo" height="28" onerror="this.style.display='none'" src="/assets/img/reliable-nissan-logo.png" width="120"/>
+<h1 class="nf-form-title">Guest Profile — Request a Call Back</h1>
+<form class="nf-form" data-custom-submit="true" data-form-name="Request a Callback" id="callback-form" novalidate="">
+<div class="nf-field">
+<label class="nf-label" for="cb-name">Full Name <span aria-hidden="true">*</span></label>
+<input aria-required="true" autocomplete="name" class="nf-input" id="cb-name" name="Full Name" placeholder="Enter your full name" required="" type="text"/>
+<span class="nf-field-error" id="cb-name-err" role="alert">Please enter your full name.</span>
+</div>
+<div class="nf-field">
+<label class="nf-label" for="cb-phone">Mobile Number <span aria-hidden="true">*</span></label>
+<input aria-required="true" autocomplete="tel" class="nf-input" id="cb-phone" inputmode="numeric" maxlength="10" name="Mobile Number" pattern="[6-9][0-9]{9}" placeholder="10-digit mobile number" required="" type="tel"/>
+<span class="nf-field-error" id="cb-phone-err" role="alert">Please enter a valid 10-digit mobile number.</span>
+</div>
+<div class="nf-field">
+<label class="nf-label" for="cb-city">City</label>
+<input autocomplete="address-level2" class="nf-input" id="cb-city" name="City" placeholder="Your city" type="text"/>
+</div>
+<div class="nf-field">
+<label class="nf-label" for="cb-interest">Interest Area</label>
+<div class="nf-select-wrap">
+<select aria-label="Select interest area" class="nf-input nf-select" id="cb-interest" name="Interest Area">
+<option disabled="" selected="" value="">Select an option</option>
+<option value="new-car">New Car Purchase</option>
+<option value="exchange">Car Exchange / Evaluation</option>
+<option value="service">Service Schedule Support</option>
+<option value="fleet">Fleet / Corporate Inquiry</option>
+<option value="test-drive">Book A Test Drive</option>
+</select>
+</div>
+</div>
+<button class="nf-btn-primary" id="cb-submit-btn" type="submit">
+            Submit Request
+          </button>
+<div class="nf-consent">
+<input aria-label="Consent to terms" checked="" id="cb-consent" type="checkbox"/>
+<label for="cb-consent">By continuing, I agree to the
+              <a href="/privacy.html" target="_blank">Terms of Use &amp; Privacy Policy</a>
+</label>
+</div>
+<div aria-live="polite" class="nf-toast" id="cb-toast" role="status">
+            ✅ Thank you! Your request has been submitted successfully. Nissan India will contact you soon.
+          </div>
+</form>
+</div>
+</div>
+</div>
 </main>
-<!-- Footer placeholder -->
-<footer>
-<p>© Nissan India</p>
-</footer>
+<script>
+  (function () {
+    'use strict';
+
+    var form      = document.getElementById('callback-form');
+    var submitBtn = document.getElementById('cb-submit-btn');
+    var toast     = document.getElementById('cb-toast');
+
+    function validatePhone(v) { return /^[6-9][0-9]{9}$/.test(v); }
+
+    function setFieldError(inputId, errId, hasError) {
+      var input = document.getElementById(inputId);
+      var err   = document.getElementById(errId);
+      if (!input || !err) return;
+      if (hasError) {
+        input.classList.add('error');
+        err.classList.add('visible');
+      } else {
+        input.classList.remove('error');
+        err.classList.remove('visible');
+      }
+    }
+
+    function showGlobalError(message) {
+      var existing = form.querySelector('.cb-global-error');
+      if (!existing) {
+        existing = document.createElement('div');
+        existing.className = 'cb-global-error';
+        existing.style.cssText = 'color:#c00;background:#fff8f8;border:1px solid #c00;border-radius:4px;padding:10px 14px;margin-bottom:16px;font-size:14px;text-align:center;';
+        form.prepend(existing);
+      }
+      existing.textContent = message;
+      existing.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function clearGlobalError() {
+      var existing = form.querySelector('.cb-global-error');
+      if (existing) existing.remove();
+    }
+
+    function getApiUrl() {
+      if (window.APP_CONFIG && window.APP_CONFIG.API_BASE_URL) {
+        return window.APP_CONFIG.API_BASE_URL;
+      }
+      var h = window.location.hostname;
+      return (h === 'localhost' || h === '127.0.0.1')
+        ? 'http://localhost:5000/api'
+        : (window.location.origin + '/api');
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearGlobalError();
+
+      var nameVal    = document.getElementById('cb-name').value.trim();
+      var phoneVal   = document.getElementById('cb-phone').value.trim();
+      var cityVal    = document.getElementById('cb-city') ? document.getElementById('cb-city').value.trim() : '';
+      var interestEl = document.getElementById('cb-interest');
+      var interestVal = interestEl ? interestEl.value : '';
+
+      var nameErr  = !nameVal;
+      var phoneErr = !validatePhone(phoneVal);
+
+      setFieldError('cb-name',  'cb-name-err',  nameErr);
+      setFieldError('cb-phone', 'cb-phone-err', phoneErr);
+
+      if (nameErr || phoneErr) {
+        var firstErrorInput = form.querySelector('.error');
+        if (firstErrorInput) firstErrorInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting…';
+
+      var payload = {
+        formName:       'Request a Callback from Guest Profile',
+        'Full Name':    nameVal,
+        'Mobile Number': phoneVal,
+        'City':         cityVal || 'Not provided',
+        'Interest Area': interestVal || 'Not specified'
+      };
+
+      var apiUrl = getApiUrl() + '/forms/submit';
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function (response) {
+        return response.json().then(function (data) {
+          return { ok: response.ok, status: response.status, data: data };
+        });
+      })
+      .then(function (result) {
+        if (result.ok && result.data.success) {
+          submitBtn.textContent = 'Submitted ✓';
+          submitBtn.disabled = true;
+          toast.classList.add('visible');
+          setTimeout(function () { window.location.href = '/index.html'; }, 2500);
+        } else {
+          throw new Error(result.data.message || 'Submission failed. Please try again.');
+        }
+      })
+      .catch(function (error) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+        var msg = (error.message && error.message !== 'Failed to fetch')
+          ? error.message
+          : 'Unable to connect. Please check your internet connection.';
+        showGlobalError(msg);
+      });
+    });
+
+    var nameInput  = document.getElementById('cb-name');
+    var phoneInput = document.getElementById('cb-phone');
+    if (nameInput)  nameInput.addEventListener('blur',  function () { setFieldError('cb-name',  'cb-name-err',  !this.value.trim()); });
+    if (nameInput)  nameInput.addEventListener('input', function () { if (this.value.trim()) setFieldError('cb-name', 'cb-name-err', false); });
+    if (phoneInput) phoneInput.addEventListener('blur',  function () { setFieldError('cb-phone', 'cb-phone-err', !validatePhone(this.value.trim())); });
+    if (phoneInput) phoneInput.addEventListener('input', function () { if (validatePhone(this.value.trim())) setFieldError('cb-phone', 'cb-phone-err', false); });
+
+  })();
+</script>
+
+<style>
+#injected-global-addresses {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: #fff;
+    padding: 30px 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 40px auto;
+    max-width: 1200px;
+    font-family: 'Inter', sans-serif;
+}
+#injected-global-addresses .gfa-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 30px;
+    position: relative;
+    flex: 1;
+}
+#injected-global-addresses .gfa-item:not(:last-child) {
+    border-right: 2px solid #c3002f;
+}
+#injected-global-addresses .gfa-icon {
+    width: 30px;
+    height: 30px;
+    background: #c3002f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+#injected-global-addresses .gfa-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+#injected-global-addresses .gfa-content {
+    display: flex;
+    flex-direction: column;
+}
+#injected-global-addresses .gfa-content h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-content p {
+    font-size: 13px;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-phone {
+    font-size: 22px;
+    font-weight: 800;
+    color: #c3002f;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#injected-global-addresses .gfa-phone svg {
+    width: 20px;
+    height: 20px;
+    fill: #c3002f;
+}
+
+@media (max-width: 900px) {
+    #injected-global-addresses {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    #injected-global-addresses .gfa-item {
+        border-right: none !important;
+        border-bottom: 2px solid #c3002f;
+        padding: 0 0 30px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+    #injected-global-addresses .gfa-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+</style>
+<div id="injected-global-addresses">
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>MOTI NAGAR</h4>
+<p>21 NAJAFGARH ROAD<br/>INDUSTRIAL AREA<br/>DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>DWARKA</h4>
+<p>PLOT NO 59 GOODLUCK<br/>PALAZA ROAD NO -9 SECTOR 20<br/>DWARKA NEW DELHI - 110075</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>WORKSHOP</h4>
+<p>62 INDUSTRIAL AREA<br/>RAMA ROAD MOTI NAGAR<br/>NEW DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9619232316">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9619232316
+            </a>
+</div>
+</div>
+</div>
+<app-footer></app-footer>
 </body>
 </html>

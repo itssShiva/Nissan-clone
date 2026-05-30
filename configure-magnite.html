@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Magnite Configurator | Nissan India</title>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #000; }
+        #ar-wrapper { width: 100%; height: 100vh; position: relative; }
+        #configurator-frame { width: 100%; height: 100%; border: none; display: block; }
+        
+        /* Loading overlay */
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+        #loading-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: #c3002f;
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .loading-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+<!-- INJECTED GLOBAL NAVBAR REMOVAL -->
+<style id="global-navbar-removal">
+  /* Hide all complex navigation elements globally */
+  .burger-menu-wrapper,
+  aside.sidebar-mobile,
+  aside.sidebar-desktop,
+  .nissanNav-container,
+  .fg.subnav,
+  .header-menu,
+  #gnavi,
+  .gnavi_list,
+  .c_010D-overlay,
+  .menu,
+  nav[aria-label=""] {
+      display: none !important;
+  }
+  
+  /* Modern Premium "Back to Home" Button */
+  .global-back-to-home {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #c3002f;
+      color: #ffffff !important;
+      font-family: 'Inter', 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none !important;
+      box-shadow: 0 4px 12px rgba(195, 0, 47, 0.3), 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      backdrop-filter: blur(4px);
+  }
+
+  .global-back-to-home:hover {
+      background: #a0002a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(195, 0, 47, 0.4), 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  .global-back-to-home:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(195, 0, 47, 0.3);
+  }
+
+  .global-back-to-home svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease;
+  }
+
+  .global-back-to-home:hover svg {
+      transform: translateX(-3px);
+  }
+
+  @media (max-width: 768px) {
+      .global-back-to-home {
+          top: 12px;
+          right: 16px;
+          padding: 8px 16px;
+          font-size: 13px;
+      }
+      .global-back-to-home svg {
+          width: 16px;
+          height: 16px;
+      }
+  }
+</style>
+<!-- END INJECTED GLOBAL NAVBAR REMOVAL -->
+    <link rel="stylesheet" href="/assets/css/global-design-system.css">
+</head>
+<body>
+<!-- INJECTED BACK TO HOME BUTTON -->
+<a class="global-back-to-home" href="/index.html" id="global-back-to-home-btn">
+<svg viewBox="0 0 24 24">
+<line x1="19" x2="5" y1="12" y2="12"></line>
+<polyline points="12 19 5 12 12 5"></polyline>
+</svg>
+    Back to Home
+</a>
+<!-- END INJECTED BACK TO HOME BUTTON -->
+<div id="loading-overlay">
+<div class="loading-spinner"></div>
+<p class="loading-text">Loading Configurator…</p>
+</div>
+<div id="ar-wrapper">
+<iframe allow="fullscreen; autoplay; xr-spatial-tracking" allowfullscreen="" id="configurator-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-top-navigation" src="https://magniteconfigurator.nissan.in/#/presentation">
+</iframe>
+</div>
+<script>
+        var frame = document.getElementById('configurator-frame');
+        var overlay = document.getElementById('loading-overlay');
+
+        frame.addEventListener('load', function () {
+            setTimeout(function () {
+                overlay.classList.add('fade-out');
+                setTimeout(function () {
+                    overlay.style.display = 'none';
+                }, 700);
+            }, 800);
+        });
+
+        setTimeout(function () {
+            overlay.classList.add('fade-out');
+            setTimeout(function () {
+                overlay.style.display = 'none';
+            }, 700);
+        }, 8000);
+    </script>
+
+<style>
+#injected-global-addresses {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: #fff;
+    padding: 30px 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 40px auto;
+    max-width: 1200px;
+    font-family: 'Inter', sans-serif;
+}
+#injected-global-addresses .gfa-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 30px;
+    position: relative;
+    flex: 1;
+}
+#injected-global-addresses .gfa-item:not(:last-child) {
+    border-right: 2px solid #c3002f;
+}
+#injected-global-addresses .gfa-icon {
+    width: 30px;
+    height: 30px;
+    background: #c3002f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+#injected-global-addresses .gfa-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+#injected-global-addresses .gfa-content {
+    display: flex;
+    flex-direction: column;
+}
+#injected-global-addresses .gfa-content h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-content p {
+    font-size: 13px;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-phone {
+    font-size: 22px;
+    font-weight: 800;
+    color: #c3002f;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#injected-global-addresses .gfa-phone svg {
+    width: 20px;
+    height: 20px;
+    fill: #c3002f;
+}
+
+@media (max-width: 900px) {
+    #injected-global-addresses {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    #injected-global-addresses .gfa-item {
+        border-right: none !important;
+        border-bottom: 2px solid #c3002f;
+        padding: 0 0 30px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+    #injected-global-addresses .gfa-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+</style>
+<div id="injected-global-addresses">
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>MOTI NAGAR</h4>
+<p>21 NAJAFGARH ROAD<br/>INDUSTRIAL AREA<br/>DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>DWARKA</h4>
+<p>PLOT NO 59 GOODLUCK<br/>PALAZA ROAD NO -9 SECTOR 20<br/>DWARKA NEW DELHI - 110075</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>WORKSHOP</h4>
+<p>62 INDUSTRIAL AREA<br/>RAMA ROAD MOTI NAGAR<br/>NEW DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9619232316">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9619232316
+            </a>
+</div>
+</div>
+</div>
+</body>
+</html>

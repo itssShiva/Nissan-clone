@@ -7,8 +7,8 @@
 <html lang="en">
 <!--<![endif]-->
 <head>
-<link href="/assets/css/modern.css" rel="stylesheet">
-<link href="/assets/css/nissan-form.css" rel="stylesheet">
+<link href="/assets/css/modern.css" rel="stylesheet"/>
+<link href="/assets/css/nissan-form.css" rel="stylesheet"/>
 <script src="https://assets.adobedtm.com/c4286b4b2b34cb9b097fac1cfe0e4ac48afd27e3/satelliteLib-565be838ba1753ca483d2f8cc657231bae6ac749.js"></script>
 <!-- Basic Page Needs
     ================================================== -->
@@ -18,8 +18,8 @@
 <meta content="NISSAN" name="author"/>
 <!-- Mobile Specific Metas
     ================================================== -->
-<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      -->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <!-- CSS
@@ -51,8 +51,268 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-MBTP8B');</script>
 <!-- End Google Tag Manager -->
+<script src="/src/components/Layout.js" type="module"></script>
+<style>
+  /* Reliable Nissan Logo Fixes */
+  .logo-container .logo img, 
+  .logo-container .logo source,
+  header .logo svg img,
+  footer .logo svg img {
+    object-fit: contain !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 45px !important;
+  }
+</style>
+<!-- INJECTED GLOBAL NAVBAR REMOVAL -->
+<style id="global-navbar-removal">
+  /* Hide all complex navigation elements globally */
+  .burger-menu-wrapper,
+  aside.sidebar-mobile,
+  aside.sidebar-desktop,
+  .nissanNav-container,
+  .fg.subnav,
+  .header-menu,
+  #gnavi,
+  .gnavi_list,
+  .c_010D-overlay,
+  .menu,
+  nav[aria-label=""] {
+      display: none !important;
+  }
+  
+  /* Modern Premium "Back to Home" Button */
+  .global-back-to-home {
+      position: fixed;
+      top: 16px;
+      right: 24px;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #c3002f;
+      color: #ffffff !important;
+      font-family: 'Inter', 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none !important;
+      box-shadow: 0 4px 12px rgba(195, 0, 47, 0.3), 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      backdrop-filter: blur(4px);
+  }
+
+  .global-back-to-home:hover {
+      background: #a0002a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(195, 0, 47, 0.4), 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  .global-back-to-home:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(195, 0, 47, 0.3);
+  }
+
+  .global-back-to-home svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform 0.3s ease;
+  }
+
+  .global-back-to-home:hover svg {
+      transform: translateX(-3px);
+  }
+
+  @media (max-width: 768px) {
+      .global-back-to-home {
+          top: 12px;
+          right: 16px;
+          padding: 8px 16px;
+          font-size: 13px;
+      }
+      .global-back-to-home svg {
+          width: 16px;
+          height: 16px;
+      }
+  }
+</style>
+<!-- END INJECTED GLOBAL NAVBAR REMOVAL -->
+    <link rel="stylesheet" href="/assets/css/global-design-system.css">
 </head>
 <body>
+<!-- INJECTED BACK TO HOME BUTTON -->
+<a class="global-back-to-home" href="/index.html" id="global-back-to-home-btn">
+<svg viewBox="0 0 24 24">
+<line x1="19" x2="5" y1="12" y2="12"></line>
+<polyline points="12 19 5 12 12 5"></polyline>
+</svg>
+    Back to Home
+</a>
+<!-- END INJECTED BACK TO HOME BUTTON -->
+<div id="app-navbar" style="display: block; position: sticky; top: 0; z-index: 10000; width: 100%;"><div class="header">
+<div class="noindex" data-elastic-exclude="">
+<ul class="skiplinks" id="skiplinks">
+<li><a href="#container">Skip to main content</a></li>
+<li><a href="#footer-element"></a></li>
+</ul>
+</div>
+<div itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+<div class="noindex" data-elastic-exclude="">
+<header class="c_010D c_010D-is-floating">
+<div class="c_010D-breakpoint-test"></div>
+<div class="c_010D-overlay"></div>
+<div class="wrapper">
+<a aria-label="nissan link to homepage" class="logo-container" href="/index.html">
+<picture class="logo svg">
+<source media="screen and (min-width: 960px)" srcset="
+                      /assets/img/reliable-nissan-logo.png
+                    "/>
+<source media="print" srcset="
+                      /assets/img/reliable-nissan-logo.png
+                    "/>
+<img alt="CD" src="/assets/img/reliable-nissan-logo.png"/>
+</picture>
+</a>
+<ul class="print-info">
+<li class="print-info-date"><span></span></li>
+<li class="print-info-url"></li>
+</ul>
+<div class="burger-menu-wrapper" data-bookmark-url="/jcr:content/showroom.bookmarks.json">
+<div class="burger-container">
+<a aria-describedby="hamburger-menu-label" aria-expanded="false" class="burger" data-close-text="Close Menu" data-open-text="Open Menu" href="javascript:void(0);" role="button">
+<span id="hamburger-menu-label">Open Menu</span>
+</a>
+</div>
+</div>
+<aside class="sidebar-mobile" role="navigation">
+<div class="sidebar-mobile-inner">
+<nav aria-label="">
+<div class="menu">
+<ul class="primary">
+<li class="">
+<a href="/prices-list.html"> PRICES </a>
+</li>
+<li class="">
+<a href="/vehicles/new/nissan-magnite/offer.html">
+                            MONTHLY OFFER
+                          </a>
+</li>
+<li class="has-menu">
+<a aria-expanded="false" href="javascript:void(0);">
+                            Shop@Home
+                          </a>
+<ul class="dropdown">
+<li class="">
+<a href="/request-a-callback.html" target="_blank"><span>REQUEST A CALL BACK</span></a>
+</li>
+<li class="">
+<a href="/vehicles/brochures.html"><span>DOWNLOAD BROCHURE</span></a>
+</li>
+<li class="">
+<a href="/request-a-callback.html" target="_blank"><span>BOOK A TEST DRIVE</span></a>
+</li>
+<li class="">
+<a href="/configurator-gravite-configurator.html" target="_blank">CONFIGURE GRAVITE</a>
+</li>
+<li class="">
+<a href="/configure-magnite.html" target="_blank"><span>CONFIGURE MAGNITE</span></a>
+</li>
+<li class="">
+<a href="/exchange-car.html" target="_blank"><span>EXCHANGE YOUR CAR</span></a>
+</li>
+<li class="">
+<a href="/book-a-car.html" target="_blank"><span>CHECK YOUR EMI</span></a>
+</li>
+<li class="">
+<a href="/book-a-car.html" target="_blank"><span>BOOK A CAR</span></a>
+</li>
+</ul>
+</li>
+<li>
+<a aria-expanded="false" href="/request-a-callback.html">
+                            Contact Us
+                          </a>
+</li>
+<li>
+<a aria-expanded="false" href="/about-us.html">About Us</a>
+</li>
+</ul>
+</div>
+</nav>
+<aside aria-label="sidebar navigation" class="sidebar-desktop">
+<nav aria-label="">
+<div class="sidebar-desktop-inner">
+<ul class="sidebar">
+<li class="login"></li>
+<li>
+<a data-adobe-tagging="" href="/login.html" target="_blank">
+                              Your Profile
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="prices-list" href="/prices-list.html">
+                              Prices
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="" href="/request-a-callback.html" target="_blank">
+                              Request A Call Back
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="vehicles|brochures" href="/vehicles/brochures.html">
+                              Download Brochure
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="" href="/configurator-gravite-configurator.html">
+                              Configure Gravite
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="" href="/configure-magnite.html">
+                              Configure Magnite
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="" href="/book-a-car.html">
+                              Book A Car
+                            </a>
+</li>
+
+<li>
+<a data-adobe-tagging="vehicles|new|nissan-magnite|accessories" href="/vehicles/new/nissan-magnite/accessories.html">
+                              Accessories
+                            </a>
+</li>
+<li>
+<a data-adobe-tagging="" href="/latest-news.html">India Newsroom</a>
+</li>
+<li>
+<a data-adobe-tagging="" href="/dealer-registration.html">
+                              Become A Nissan Partner
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</aside>
+<div class="toolbar"></div>
+</div>
+</aside>
+</div>
+</header></div>
+</div>
+</div>
+</div>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
 <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MBTP8B" style="display:none;visibility:hidden" width="0"></iframe>
@@ -63,8 +323,8 @@
 <div class="headerInr">
 <div class="logo-container">
 <div class="logo">
-<a href="/"><img src="/common/images/nissan-logo.svg"/></a>
-<a href="/Book-Test-Drive.html"><em>Test Drive</em></a>
+<a href="/"><img src="/assets/img/reliable-nissan-logo.png"/></a>
+<a href="/request-a-callback.html"><em>Test Drive</em></a>
 </div>
 <div class="fg subnav">
 <ul class="menu">
@@ -101,7 +361,7 @@
 <span></span>
 </div>
 <!-- <div class="header-right">
-                    <div class="cstinr"><a href="javascript:void(0);"><span>Hello Guest</span><img src="common/images/infocstmr.png"></a></div>
+                    <div class="cstinr"><a href="javascript:void(0);"><span>Hello Guest</span><img src="common/images/infocstmr.png"/></a></div>
                     <div class="profile-values">
                         <ul>
                             <li><a href="profile.html">My Account</a></li>
@@ -121,7 +381,7 @@
 <div class="nissanNavin">
 <ul>
 <li><a href="/request-a-callback.html" target="_blank">Request A Call Back </a></li>
-<li><a href="/Book-Test-Drive.html">Book A Test Drive </a></li>
+<li><a href="/request-a-callback.html">Book A Test Drive </a></li>
 <li><a href="/find-a-dealer.html" target="_blank">Find A Dealer</a></li>
 <li><a href="/book-a-car.html" target="_blank">Book A Car</a></li>
 <li class="ddClk">
@@ -131,7 +391,7 @@
 <li><a href="/nissan-intelligent-choice.html" target="_blank">Nissan Intelligent Choice</a></li>
 <li><a href="/vehicles/brochures.html" target="_blank">Download Brochure</a></li>
 <li><a href="/book-a-car.html" target="_blank">Check Your EMI</a></li>
-<li><a href="/book-a-car.html" target="_blank">Exchange Your Car</a></li>
+<li><a href="/exchange-car.html" target="_blank">Exchange Your Car</a></li>
 <li><a href="/track-my-car.html" target="_blank">Track My Car </a></li>
 </ul>
 </li>
@@ -280,48 +540,43 @@
   }
 </style>
 <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IYgwvwEtfdKg1Q6mI2B9IuYzTNiKXN8x9rD3hUHqPHnerrT5oeCl3kl62rNVBjI-X-csf6H98TAf3qjTbuSbhdKmGxvt0l_wEiZPP1uty_Isw3O0AU6R8GGFs0ocXFI96VQGoBxVZGvv_YPXKKWoTk"/>
-
 <!-- ============ SPLIT-PANEL WRAPPER ============ -->
 <div class="btd-wrapper">
-
-  <!-- LEFT: Crimson info panel -->
-  <div class="btd-left">
-    <p class="btd-left-headline">Book Your Nissan Test Drive</p>
-    <p class="btd-left-sub">Experience the thrill. Select a model, fill in your details and we'll schedule your test drive.</p>
-    <div class="btd-services">
-      <div class="btd-service-item">
-        <div class="btd-service-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8zM5.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM18.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"/></svg></div>
-        <span class="btd-service-label">Book A Test Drive</span>
-      </div>
-      <div class="btd-service-item">
-        <div class="btd-service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <span class="btd-service-label">Find A Dealer</span>
-      </div>
-      <div class="btd-service-item">
-        <div class="btd-service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <span class="btd-service-label">Book A Service</span>
-      </div>
-      <div class="btd-service-item">
-        <div class="btd-service-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
-        <span class="btd-service-label">Request Callback</span>
-      </div>
-      <div class="btd-service-item">
-        <div class="btd-service-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <span class="btd-service-label">Refer &amp; Earn</span>
-      </div>
-      <div class="btd-service-item">
-        <div class="btd-service-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
-        <span class="btd-service-label">Car Exchange</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: White form panel -->
-  <div class="btd-right">
-    <img alt="Nissan" class="nf-logo"
-      src="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/img/svg/nissan-next-logo.svg"
-      onerror="this.style.display='none'">
-    <h1 class="btd-right-title">Book A Test Drive</h1>
+<!-- LEFT: Crimson info panel -->
+<div class="btd-left">
+<p class="btd-left-headline">Book Your Nissan Test Drive</p>
+<p class="btd-left-sub">Experience the thrill. Select a model, fill in your details and we'll schedule your test drive.</p>
+<div class="btd-services">
+<div class="btd-service-item">
+<div class="btd-service-icon"><svg viewBox="0 0 24 24"><rect height="13" rx="2" width="15" x="1" y="3"></rect><path d="M16 8h4l3 3v5h-7V8zM5.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM18.5 17a1.5 1.5 0 100 3 1.5 1.5 0 000-3z"></path></svg></div>
+<span class="btd-service-label">Book A Test Drive</span>
+</div>
+<div class="btd-service-item">
+<div class="btd-service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+<span class="btd-service-label">Find A Dealer</span>
+</div>
+<div class="btd-service-item">
+<div class="btd-service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg></div>
+<span class="btd-service-label">Book A Service</span>
+</div>
+<div class="btd-service-item">
+<div class="btd-service-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect height="4" rx="1" width="6" x="9" y="3"></rect></svg></div>
+<span class="btd-service-label">Request Callback</span>
+</div>
+<div class="btd-service-item">
+<div class="btd-service-icon"><svg viewBox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg></div>
+<span class="btd-service-label">Refer &amp; Earn</span>
+</div>
+<div class="btd-service-item">
+<div class="btd-service-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 01-4 4H3"></path></svg></div>
+<span class="btd-service-label">Car Exchange</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: White form panel -->
+<div class="btd-right">
+<img alt="Nissan" class="nf-logo" onerror="this.style.display='none'" src="/assets/img/reliable-nissan-logo.png"/>
+<h1 class="btd-right-title">Book A Test Drive</h1>
 <div class="main">
 <div class="">
 <section>
@@ -614,8 +869,8 @@
 <input class="txtbx input-key otpinput enterbutton_pe restrict_e" id="pmchars1" maxlength="1" oninput="javascript: if (this.value.length &gt; this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number"/>
 <input class="txtbx input-key otpinput enterbutton_pe restrict_e" id="pmchars2" maxlength="1" oninput="javascript: if (this.value.length &gt; this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number"/>
 <input class="txtbx input-key otpinput enterbutton_pe restrict_e" id="pmchars3" maxlength="1" oninput="javascript: if (this.value.length &gt; this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number"/>
-<input class="txtbx input-key otpinput enterbutton_pe restrict_e" id="pmchars4" maxlength="1" oninput="javascript: if (this.value.length &gt; this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number">
-</input></div>
+<input class="txtbx input-key otpinput enterbutton_pe restrict_e" id="pmchars4" maxlength="1" oninput="javascript: if (this.value.length &gt; this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number"/>
+</div>
 <div class="error" id="error_otp_pm" style="display:none">Please enter valid OTP</div>
 <span class="text-danger field-validation-error" id="otp_resendmobmsg" style="display:none;color:forestgreen">OTP sent successfully</span>
 <div class="resend-login mrrightflex">
@@ -742,9 +997,7 @@
 </a>
 </li>
 <li>
-<a data-adobe-tagging="contact-us" data-di-id="di-id-2f8bcd14-572db193" href="/contact-us.html" target="_blank">
-<span>Contact Us</span>
-</a>
+<a data-adobe-tagging="contact-us" data-di-id="di-id-2f8bcd14-572db193" href="/request-a-callback.html" target="_blank">Contact Us</a>
 </li>
 <li>
 <a href="/annual-return-extract-for-nissan-india.html" target="_blank">
@@ -860,5 +1113,139 @@
     </script>
 <script src="/MyScripts/BATDAdobiTag.js"></script>
 <script type="text/javascript">_satellite.pageBottom();</script>
-</body>
+</div></div>
+<style>
+#injected-global-addresses {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: #fff;
+    padding: 30px 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 40px auto;
+    max-width: 1200px;
+    font-family: 'Inter', sans-serif;
+}
+#injected-global-addresses .gfa-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 30px;
+    position: relative;
+    flex: 1;
+}
+#injected-global-addresses .gfa-item:not(:last-child) {
+    border-right: 2px solid #c3002f;
+}
+#injected-global-addresses .gfa-icon {
+    width: 30px;
+    height: 30px;
+    background: #c3002f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+#injected-global-addresses .gfa-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+}
+#injected-global-addresses .gfa-content {
+    display: flex;
+    flex-direction: column;
+}
+#injected-global-addresses .gfa-content h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-content p {
+    font-size: 13px;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+#injected-global-addresses .gfa-phone {
+    font-size: 22px;
+    font-weight: 800;
+    color: #c3002f;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#injected-global-addresses .gfa-phone svg {
+    width: 20px;
+    height: 20px;
+    fill: #c3002f;
+}
+
+@media (max-width: 900px) {
+    #injected-global-addresses {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+    #injected-global-addresses .gfa-item {
+        border-right: none !important;
+        border-bottom: 2px solid #c3002f;
+        padding: 0 0 30px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+    #injected-global-addresses .gfa-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+</style>
+<div id="injected-global-addresses">
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>MOTI NAGAR</h4>
+<p>21 NAJAFGARH ROAD<br/>INDUSTRIAL AREA<br/>DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>DWARKA</h4>
+<p>PLOT NO 59 GOODLUCK<br/>PALAZA ROAD NO -9 SECTOR 20<br/>DWARKA NEW DELHI - 110075</p>
+<a class="gfa-phone" href="tel:9355000958">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9355000958
+            </a>
+</div>
+</div>
+<div class="gfa-item">
+<div class="gfa-icon">
+<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="gfa-content">
+<h4>WORKSHOP</h4>
+<p>62 INDUSTRIAL AREA<br/>RAMA ROAD MOTI NAGAR<br/>NEW DELHI - 110015</p>
+<a class="gfa-phone" href="tel:9619232316">
+<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                9619232316
+            </a>
+</div>
+</div>
+</div>
+<app-footer></app-footer></body>
 </html>
