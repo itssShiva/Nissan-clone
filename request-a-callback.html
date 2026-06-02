@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <!--
   PERFORMANCE FIXES APPLIED:
@@ -32,10 +32,10 @@
 <meta content="index,follow" name="robots"/>
 <link href="/contact-us.html" rel="canonical"/>
 <title>Request a Callback | Contact Nissan India | Nissan India</title>
-<!-- FIX 1: Favicon â€” only what browsers actually use (drop 8 redundant sizes) -->
+<!-- FIX 1: Favicon — only what browsers actually use (drop 8 redundant sizes) -->
 <link href="/assets/img/reliable-nissan-logo.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/img/reliable-nissan-logo.png" rel="apple-touch-icon"/>
-<!-- FIX 2: Critical CSS inlined â€” prevents any render-blocking for above-the-fold content -->
+<!-- FIX 2: Critical CSS inlined — prevents any render-blocking for above-the-fold content -->
 <style>
     /* === RESET & BASE === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,7 +69,7 @@
     .logo-container { display: flex; align-items: center; text-decoration: none; }
     .logo-container picture img { height: 90px; width: auto; display: block; }
     .page-title { color: #fff; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
-    .burger-container { display: none; } /* simplified â€” full nav JS loads deferred */
+    .burger-container { display: none; } /* simplified — full nav JS loads deferred */
 
     /* === MAIN CARD LAYOUT === */
     .nf-wrapper {
@@ -138,7 +138,7 @@
     .nf-input.error { border-color: #e00; }
     .nf-select-wrap { position: relative; }
     .nf-select-wrap::after {
-      content: 'â–¾'; position: absolute; right: 14px; top: 50%;
+      content: '▾'; position: absolute; right: 14px; top: 50%;
       transform: translateY(-50%); pointer-events: none; color: #888;
     }
     .nf-select { width: 100%; cursor: pointer; padding-right: 36px; }
@@ -261,12 +261,12 @@
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
     .hidden { display: none !important; }
   </style>
-<!-- FIX 3: Fonts loaded async â€” non-render-blocking -->
+<!-- FIX 3: Fonts loaded async — non-render-blocking -->
 <link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/fonts/fonts-latin-basic.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <noscript>
 <link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/fonts/fonts-latin-basic.min.css" rel="stylesheet"/>
 </noscript>
-<!-- FIX 4: External CSS bundles loaded async â€” none block rendering -->
+<!-- FIX 4: External CSS bundles loaded async — none block rendering -->
 <!-- small.min.css is the only one needed immediately; loaded async then applied -->
 <link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/small.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
 <link as="style" href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/medium.min.css" media="(min-width: 36.3125em)" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
@@ -279,7 +279,7 @@
 <link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/medium.min.css" media="(min-width: 36.3125em)" rel="stylesheet"/>
 <link href="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/css/large.min.css" media="(min-width: 60em)" rel="stylesheet"/>
 </noscript>
-<!-- FIX 5: HELIOS config â€” stripped Google Maps, pricing, finance, smartLocation
+<!-- FIX 5: HELIOS config — stripped Google Maps, pricing, finance, smartLocation
        blocks that are not used on this page. Only what contact-us actually needs. -->
 <script>
     document.documentElement.classList.remove('no-js');
@@ -357,7 +357,7 @@
 
     var googleDataLayer = [HELIOS.adobe.tagging, {"event": "DLready"}];
   </script>
-<!-- FIX 6: GTM â€” inline script only. noscript iframe at end of body. Already async. -->
+<!-- FIX 6: GTM — inline script only. noscript iframe at end of body. Already async. -->
 <script>
     (function(w,d,s,l,i){
       w[l]=w[l]||[];
@@ -492,7 +492,7 @@
      HEADER
 ============================================================ -->
 <!-- ============================================================
-     MAIN â€” CALLBACK FORM
+     MAIN — CALLBACK FORM
 ============================================================ -->
 <main id="container" role="main">
 <div class="nf-wrapper">
@@ -543,7 +543,7 @@
 <!-- RIGHT: Form panel -->
 <div class="nf-right">
 <h1 class="nf-form-title">Request a Call Back</h1>
-<!-- FIX 7: Single clean submitCallback â€” duplicate at bottom of original removed -->
+<!-- FIX 7: Single clean submitCallback — duplicate at bottom of original removed -->
 <form class="nf-form" data-custom-submit="true" data-form-name="Request a Callback" id="callback-form" novalidate="">
 <div class="nf-field">
 <label class="nf-label" for="cb-name">Full Name <span aria-hidden="true">*</span></label>
@@ -612,14 +612,14 @@
 <button class="disclaimer-close-text" id="cookie-dismiss" type="button">HIDE THIS MESSAGE</button>
 </div>
 <!-- ============================================================
-     SCRIPTS â€” all deferred, none blocking render
+     SCRIPTS — all deferred, none blocking render
 ============================================================ -->
-<!-- FIX 8: Main JS bundles deferred â€” don't block parsing or rendering -->
+<!-- FIX 8: Main JS bundles deferred — don't block parsing or rendering -->
 <script defer="" src="//libs-asia.nissan-cdn.net/etc/designs/nissan_next_v3/26.05.30.NISSAN-12/common-assets/scripts/compiled/main.min.js">
 </script>
 <script defer="" src="//libs-asia.nissan-cdn.net/etc/designs/pace-forms/nissan_next_v3/26.05.30.NISSAN-8/common-assets/scripts/compiled/main-forms.min.js">
 </script>
-<!-- FIX 9: Adobe DTM loaded AFTER window load â€” was the biggest single blocker -->
+<!-- FIX 9: Adobe DTM loaded AFTER window load — was the biggest single blocker -->
 <script>
   window.addEventListener('load', function() {
     var dtm = document.createElement('script');
@@ -634,7 +634,7 @@
 <!-- FIX 10: Single canonical submitCallback (duplicate at bottom removed) -->
 <script>
   /* ============================================================
-   * Request a Callback â€” Form Submit Handler
+   * Request a Callback — Form Submit Handler
    * Fixed: Now makes a real API call and shows proper feedback.
    * ============================================================ */
   (function () {
@@ -713,7 +713,7 @@
 
       // ---- Loading state ----
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Submittingâ€¦';
+      submitBtn.textContent = 'Submitting…';
 
       // ---- Build payload ----
       var payload = {
@@ -742,8 +742,8 @@
       .then(function (result) {
         console.log('[Callback Form] Response:', result);
         if (result.ok && result.data.success) {
-          // âœ… SUCCESS
-          submitBtn.textContent = 'Submitted âœ“';
+          // ✅ SUCCESS
+          submitBtn.textContent = 'Submitted ✓';
           submitBtn.disabled = true;
           if (window.showGlobalToast) {
             window.showGlobalToast('Your request has been submitted successfully. Nissan India will contact you soon.', 'success');
@@ -757,7 +757,7 @@
       })
       .catch(function (error) {
         console.error('[Callback Form] Error:', error.message);
-        // âŒ ERROR â€” reset button and show message
+        // ❌ ERROR — reset button and show message
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Request';
         var msg = (error.message && error.message !== 'Failed to fetch')
@@ -931,30 +931,43 @@
 </div>
 </div>
 <footer class="grid-row bleed" id="footer-element">
-<div class="c_025">
-<div class="grid-row">
-<div class="col-12">
-<ul class="footer-options">
-<li>
-<a href="http://www.nissan-global.com/" title="">Global Site</a>
-</li>
-<li><a href="/sitemap.html" title="">Site Map</a></li>
-<li>
-<a href="https://ami.nissanmotornews.com/en/channels/channel-2b2d556d1494376ccef2a24479041486" title="">Newsroom</a>
-</li>
-</ul>
-<div class="footer-legal">
-<ul>
-<li><a href="/privacy.html" title="">Privacy Policy</a></li>
-<li>
-<a href="/copyright.html" title="">Copyright &amp; Disclaimer</a>
-</li>
-</ul>
-<p class="footer-copyright">Â© Nissan 2026</p>
-</div>
-</div>
-</div>
-</div>
-</footer></body>
+        <div class="c_025">
+          <div class="grid-row">
+            <div class="col-12">
+              <ul class="footer-options">
+                <li>
+                  <a href="/about-us.html" title=""
+                    >About Us</a
+                  >
+                </li>
+
+                <li><a href="/contact-us.html" title="">Contact Us</a></li>
+
+                <li>
+                  <a
+                    href="/request-a-callback.html"
+                    title=""
+                    >Request a Callback</a
+                  >
+                </li>
+              </ul>
+
+              <div class="footer-legal">
+                <ul>
+                  <li><a href="/privacy.html" title="">Privacy Policy</a></li>
+
+                  <li>
+                    <a href="/copyright.html" title=""
+                      >Copyright & Disclaimer</a
+                    >
+                  </li>
+                </ul>
+
+                <p class="footer-copyright">&copy; Reliable-Nissan 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer></body>
 </html>
 

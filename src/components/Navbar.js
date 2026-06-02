@@ -42,9 +42,9 @@ class AppNavbar extends HTMLElement {
 
   .rn-logo img {
     display: block;
-    height: 46px;
-    width: auto;
-    max-width: 200px;
+    height: 400px;
+    width: 450px;
+    max-width: 400px;
     object-fit: contain;
     vertical-align: middle;
   }

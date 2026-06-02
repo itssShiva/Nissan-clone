@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 
 <!--[if lt IE 9 ]><html lang="en-IN" dir="ltr" class="no-js ltie9" prefix="og: http://ogp.me/ns#"><![endif]-->
@@ -121,7 +121,7 @@
                     "formatting": {
                         "currency": {
                             "manualPriceFormatting": true,
-                            "symbol": "₹",
+                            "symbol": "?",
                             "position": "",
                             "decimalPlaces": 0,
                             "showDecimalZeros": true,
@@ -252,7 +252,7 @@
         border-color: #ef4444;
         background: rgba(239,68,68,0.01);
     }
-    /* Success toast — same style as request-a-callback */
+    /* Success toast � same style as request-a-callback */
     #partner-success-toast {
       display: none; background: #1a7a3c; color: #fff;
       padding: 16px 24px; border-radius: 8px;
@@ -317,7 +317,7 @@
     .nf-input.error { border-color: #e00; }
     .nf-select-wrap { position: relative; }
     .nf-select-wrap::after {
-      content: '▾'; position: absolute; right: 14px; top: 50%;
+      content: '?'; position: absolute; right: 14px; top: 50%;
       transform: translateY(-50%); pointer-events: none; color: #888;
     }
     .nf-select { width: 100%; cursor: pointer; padding-right: 36px; }
@@ -737,16 +737,16 @@
 <div class="nf-select-wrap">
 <select class="nf-input nf-select" id="partner-capital" required="">
 <option disabled="" selected="" value="">Select Investment Range</option>
-<option value="2cr-5cr">₹ 2 Crore to ₹ 5 Crore</option>
-<option value="5cr-10cr">₹ 5 Crore to ₹ 10 Crore</option>
-<option value="above-10cr">Above ₹ 10 Crore</option>
+<option value="2cr-5cr">? 2 Crore to ? 5 Crore</option>
+<option value="5cr-10cr">? 5 Crore to ? 10 Crore</option>
+<option value="above-10cr">Above ? 10 Crore</option>
 </select>
 </div>
 </div>
 <div class="nf-field">
 <label class="nf-label">Business Registration Documents (PDF)</label>
 <div class="upload-zone" onclick="triggerFileSelect()" style="border: 2px dashed #cbd5e1; border-radius: 12px; padding: 30px; text-align: center; cursor: pointer; background: #f8fafc; transition: all 0.3s ease;">
-<div style="font-size:2rem; color:#cbd5e1;">📁</div>
+<div style="font-size:2rem; color:#cbd5e1;">??</div>
 <p style="margin:5px 0 0 0; font-weight:600; color:#475569; font-size: 0.9rem;">Click to upload document</p>
 <input id="partner-file" onchange="handleFileSelected()" style="display:none;" type="file" accept=".pdf"/>
 </div>
@@ -758,7 +758,7 @@
 </div>
 <!-- Inline success toast -->
 <div aria-live="polite" id="partner-success-toast" role="alert" class="nf-toast" style="display:none;">
-<span style="font-size:1.1rem;">✅</span>
+<span style="font-size:1.1rem;">?</span>
 <span>Your business application has been submitted successfully. Our manager will contact you.</span>
 </div>
 </form>
@@ -873,7 +873,7 @@
                     
                 </button>
             </div>
-            <button class="btn" type="button"></button>
+            
         </form>
     </div>
 </script>
@@ -1016,7 +1016,7 @@
         })
         .then(function(result) {
             if (result.ok && result.data.success) {
-                btn.textContent = 'Submitted ✓';
+                btn.textContent = 'Submitted ?';
                 var toast = document.getElementById('partner-success-toast');
                 if (toast) toast.classList.add('visible');
                 
@@ -1183,5 +1183,43 @@
 </div>
 </div>
 </div>
-<app-footer></app-footer></body>
+<footer class="grid-row bleed" id="footer-element">
+        <div class="c_025">
+          <div class="grid-row">
+            <div class="col-12">
+              <ul class="footer-options">
+                <li>
+                  <a href="/about-us.html" title=""
+                    >About Us</a
+                  >
+                </li>
+
+                <li><a href="/contact-us.html" title="">Contact Us</a></li>
+
+                <li>
+                  <a
+                    href="/request-a-callback.html"
+                    title=""
+                    >Request a Callback</a
+                  >
+                </li>
+              </ul>
+
+              <div class="footer-legal">
+                <ul>
+                  <li><a href="/privacy.html" title="">Privacy Policy</a></li>
+
+                  <li>
+                    <a href="/copyright.html" title=""
+                      >Copyright & Disclaimer</a
+                    >
+                  </li>
+                </ul>
+
+                <p class="footer-copyright">&copy; Reliable-Nissan 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer></body>
 </html>

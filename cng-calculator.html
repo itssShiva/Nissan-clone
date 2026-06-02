@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 
 <!--[if lt IE 9 ]><html lang="en-IN" dir="ltr" class="no-js ltie9" prefix="og: http://ogp.me/ns#"><![endif]-->
@@ -121,7 +121,7 @@
                     "formatting": {
                         "currency": {
                             "manualPriceFormatting": true,
-                            "symbol": "₹",
+                            "symbol": "?",
                             "position": "",
                             "decimalPlaces": 0,
                             "showDecimalZeros": true,
@@ -622,15 +622,15 @@
 </div>
 <div class="slider-box">
 <label>
-<span>Petrol Price (₹/Litre)</span>
-<span id="petrol-price-val" style="color:#22c55e; font-weight:700;">₹ 104</span>
+<span>Petrol Price (?/Litre)</span>
+<span id="petrol-price-val" style="color:#22c55e; font-weight:700;">? 104</span>
 </label>
 <input class="cng-slider" id="petrol-price" max="120" min="90" oninput="calculateSavings()" step="1" type="range" value="104"/>
 </div>
 <div class="slider-box">
 <label>
-<span>CNG Price (₹/kg)</span>
-<span id="cng-price-val" style="color:#22c55e; font-weight:700;">₹ 78</span>
+<span>CNG Price (?/kg)</span>
+<span id="cng-price-val" style="color:#22c55e; font-weight:700;">? 78</span>
 </label>
 <input class="cng-slider" id="cng-price" max="95" min="65" oninput="calculateSavings()" step="1" type="range" value="78"/>
 </div>
@@ -650,8 +650,8 @@
 </div>
 <div class="savings-display">
 <h3 style="margin:0; font-size:1.2rem; font-weight:600; text-transform:uppercase; opacity:0.8;">Estimated Annual Savings</h3>
-<div id="annual-save" style="font-size:3.5rem; font-weight:900; margin:10px 0;">₹ 60,327</div>
-<p id="monthly-save" style="margin:0; font-size:1rem; opacity:0.9;">Monthly Savings: ₹ 5,027</p>
+<div id="annual-save" style="font-size:3.5rem; font-weight:900; margin:10px 0;">? 60,327</div>
+<p id="monthly-save" style="margin:0; font-size:1rem; opacity:0.9;">Monthly Savings: ? 5,027</p>
 </div>
 </div>
 </main>
@@ -762,7 +762,7 @@
                     
                 </button>
             </div>
-            <button class="btn" type="button"></button>
+            
         </form>
     </div>
 </script>
@@ -842,8 +842,8 @@
         let cngMil = parseFloat(document.getElementById('cng-mil').value);
         
         document.getElementById('run-val').innerText = `${run.toLocaleString()} km`;
-        document.getElementById('petrol-price-val').innerText = `₹ ${petrolPrice}`;
-        document.getElementById('cng-price-val').innerText = `₹ ${cngPrice}`;
+        document.getElementById('petrol-price-val').innerText = `? ${petrolPrice}`;
+        document.getElementById('cng-price-val').innerText = `? ${cngPrice}`;
         document.getElementById('petrol-mil-val').innerText = `${petrolMil} km/l`;
         document.getElementById('cng-mil-val').innerText = `${cngMil} km/kg`;
         
@@ -858,8 +858,8 @@
             annual = 0;
         }
         
-        document.getElementById('monthly-save').innerText = `Monthly Savings: ₹ ${Math.round(monthly).toLocaleString()}`;
-        document.getElementById('annual-save').innerText = `₹ ${Math.round(annual).toLocaleString()}`;
+        document.getElementById('monthly-save').innerText = `Monthly Savings: ? ${Math.round(monthly).toLocaleString()}`;
+        document.getElementById('annual-save').innerText = `? ${Math.round(annual).toLocaleString()}`;
     }
     calculateSavings();
 </script>
@@ -997,5 +997,43 @@
 </div>
 </div>
 </div>
-<app-footer></app-footer></body>
+<footer class="grid-row bleed" id="footer-element">
+        <div class="c_025">
+          <div class="grid-row">
+            <div class="col-12">
+              <ul class="footer-options">
+                <li>
+                  <a href="/about-us.html" title=""
+                    >About Us</a
+                  >
+                </li>
+
+                <li><a href="/contact-us.html" title="">Contact Us</a></li>
+
+                <li>
+                  <a
+                    href="/request-a-callback.html"
+                    title=""
+                    >Request a Callback</a
+                  >
+                </li>
+              </ul>
+
+              <div class="footer-legal">
+                <ul>
+                  <li><a href="/privacy.html" title="">Privacy Policy</a></li>
+
+                  <li>
+                    <a href="/copyright.html" title=""
+                      >Copyright & Disclaimer</a
+                    >
+                  </li>
+                </ul>
+
+                <p class="footer-copyright">&copy; Reliable-Nissan 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer></body>
 </html>

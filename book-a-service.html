@@ -1,4 +1,4 @@
-﻿
+
 <!DOCTYPE html>
 
 <!--[if lt IE 9 ]><html lang="en-IN" dir="ltr" class="no-js ltie9" prefix="og: http://ogp.me/ns#"><![endif]-->
@@ -121,7 +121,7 @@
                     "formatting": {
                         "currency": {
                             "manualPriceFormatting": true,
-                            "symbol": "₹",
+                            "symbol": "?",
                             "position": "",
                             "decimalPlaces": 0,
                             "showDecimalZeros": true,
@@ -666,7 +666,7 @@
 <h4 style="margin:0; font-weight:600;">Periodic Maintenance / Engine Oil Change</h4>
 <p style="margin:2px 0 0 0; font-size:0.85rem; color:#64748b;">Includes oil filter replacement and vehicle health check.</p>
 </div>
-<div style="font-weight:700;">₹ 1,899</div>
+<div style="font-weight:700;">? 1,899</div>
 </div>
 <div class="service-card" onclick="toggleService('brakes', 2499, this)">
 <input id="chk-brakes" style="pointer-events:none;" type="checkbox"/>
@@ -674,7 +674,7 @@
 <h4 style="margin:0; font-weight:600;">Front &amp; Rear Brake Caliper Service</h4>
 <p style="margin:2px 0 0 0; font-size:0.85rem; color:#64748b;">Cleaning, greasing, and pads inspection.</p>
 </div>
-<div style="font-weight:700;">₹ 2,499</div>
+<div style="font-weight:700;">? 2,499</div>
 </div>
 <div class="service-card" onclick="toggleService('ac', 1200, this)">
 <input id="chk-ac" style="pointer-events:none;" type="checkbox"/>
@@ -682,7 +682,7 @@
 <h4 style="margin:0; font-weight:600;">AC Evaporator Disinfection</h4>
 <p style="margin:2px 0 0 0; font-size:0.85rem; color:#64748b;">Cleans bacterial residue and restores cooling efficiency.</p>
 </div>
-<div style="font-weight:700;">₹ 1,200</div>
+<div style="font-weight:700;">? 1,200</div>
 </div>
 <h3 style="font-weight:700; font-size:1.2rem; margin-top:30px; margin-bottom:15px;">2. Pick a Schedule Date</h3>
 <div style="background:#f8fafc; border:1px solid #e2e8f0; padding:20px; border-radius:12px;">
@@ -712,11 +712,11 @@
 <p><strong>Selected Date:</strong> <span id="sum-date">May 29, 2026</span></p>
 <p><strong>Items:</strong></p>
 <ul id="sum-items" style="padding-left:20px; font-size:0.9rem; color:#475569;">
-<li>Periodic Maintenance (₹1,899)</li>
+<li>Periodic Maintenance (?1,899)</li>
 </ul>
 <div class="summary-total">
 <span>Total:</span>
-<span id="sum-total">₹ 1,899</span>
+<span id="sum-total">? 1,899</span>
 </div>
 <button class="btn-nav-booking" onclick="submitService()" style="width:100%; margin-top:20px;">Schedule Service</button>
 </div>
@@ -830,7 +830,7 @@
                     
                 </button>
             </div>
-            <button class="btn" type="button"></button>
+            
         </form>
     </div>
 </script>
@@ -932,13 +932,13 @@
         for (let key in services) {
             if (services[key].selected) {
                 let li = document.createElement('li');
-                li.innerText = `${services[key].name} (₹${services[key].price.toLocaleString()})`;
+                li.innerText = `${services[key].name} (?${services[key].price.toLocaleString()})`;
                 itemsUl.appendChild(li);
                 total += services[key].price;
             }
         }
         
-        document.getElementById('sum-total').innerText = `₹ ${total.toLocaleString()}`;
+        document.getElementById('sum-total').innerText = `? ${total.toLocaleString()}`;
     }
     
     function submitService() {
@@ -1080,5 +1080,43 @@
 </div>
 </div>
 </div>
-<app-footer></app-footer></body>
+<footer class="grid-row bleed" id="footer-element">
+        <div class="c_025">
+          <div class="grid-row">
+            <div class="col-12">
+              <ul class="footer-options">
+                <li>
+                  <a href="/about-us.html" title=""
+                    >About Us</a
+                  >
+                </li>
+
+                <li><a href="/contact-us.html" title="">Contact Us</a></li>
+
+                <li>
+                  <a
+                    href="/request-a-callback.html"
+                    title=""
+                    >Request a Callback</a
+                  >
+                </li>
+              </ul>
+
+              <div class="footer-legal">
+                <ul>
+                  <li><a href="/privacy.html" title="">Privacy Policy</a></li>
+
+                  <li>
+                    <a href="/copyright.html" title=""
+                      >Copyright & Disclaimer</a
+                    >
+                  </li>
+                </ul>
+
+                <p class="footer-copyright">&copy; Reliable-Nissan 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer></body>
 </html>

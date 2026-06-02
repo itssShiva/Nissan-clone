@@ -6,11 +6,11 @@ class AppFooter extends HTMLElement {
 <div class="col-12">
 <ul class="footer-options">
 <li>
-<a href="http://www.nissan-global.com/" title="">Global Site</a>
+<a href="/about-us.html" title="">About Us</a>
 </li>
-<li><a href="/sitemap.html" title="">Site Map</a></li>
+<li><a href="/contact-us.html" title="">Contact-us</a></li>
 <li>
-<a href="https://ami.nissanmotornews.com/en/channels/channel-2b2d556d1494376ccef2a24479041486" title="">Newsroom</a>
+<a href="request-a-callback.html" title="">request-a-callback</a>
 </li>
 </ul>
 
@@ -21,7 +21,7 @@ class AppFooter extends HTMLElement {
 <a href="/copyright.html" title="">Copyright &amp; Disclaimer</a>
 </li>
 </ul>
-<p class="footer-copyright">© Nissan 2026</p>
+<p class="footer-copyright">© Reliable-Nissan 2026</p>
 </div>
 </div>
 </div>
